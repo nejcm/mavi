@@ -1,7 +1,7 @@
-import catShowers from "@/assets/cat-showers.jpg";
-import catFaucets from "@/assets/cat-faucets.jpg";
-import catToilets from "@/assets/cat-toilets.jpg";
 import catBathtubs from "@/assets/cat-bathtubs.jpg";
+import catFaucets from "@/assets/cat-faucets.jpg";
+import catShowers from "@/assets/cat-showers.jpg";
+import catToilets from "@/assets/cat-toilets.jpg";
 import projectHotel from "@/assets/project-hotel.jpg";
 
 export interface NewsPost {
@@ -106,6 +106,7 @@ function byNewest(a: NewsPost, b: NewsPost) {
 }
 
 export function getAllNews() {
+  // oxlint-disable-next-line unicorn/no-array-sort
   return [...posts].sort(byNewest);
 }
 
@@ -116,4 +117,3 @@ export function getLatestNews(limit: number) {
 export function getNewsBySlug(slug: string) {
   return posts.find((post) => post.slug === slug);
 }
-

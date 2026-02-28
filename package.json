@@ -16,7 +16,7 @@
     "test:e2e": "bun run --filter @mavi/web test:e2e",
     "knip": "knip",
     "lint": "oxlint --deny-warnings .",
-    "lint:ts": "bun run --filter '*' typecheck",
+    "lint:ts": "bun run --filter '*' lint:ts",
     "format": "oxfmt .",
     "format:check": "oxfmt --check ."
   },
