@@ -37,42 +37,53 @@ function NewsListPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-5">
+        <div className="mx-auto mt-12 grid max-w-4xl gap-5 lg:grid-cols-2">
           {posts.map((post) => (
             <article
               key={post.id}
-              className="rounded-lg border border-border/70 bg-card p-6 transition-colors hover:border-primary/40"
+              className="overflow-hidden rounded-lg border border-border/70 bg-card transition-colors hover:border-primary/40"
             >
-              <div className="mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.15em] text-muted-foreground font-body">
-                <span>{post.category}</span>
-                <span>•</span>
-                <span>
-                  {new Date(post.date).toLocaleDateString(i18n.language, {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </span>
+              <div className="aspect-16/8 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
 
-              <h2 className="font-display text-2xl text-foreground">
-                <Link
-                  to="/news/$slug"
-                  params={{ slug: post.slug }}
-                  className="transition-colors hover:text-primary"
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="mt-3 text-muted-foreground font-body">{post.excerpt}</p>
+              <div className="p-6">
+                <div className="mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.15em] text-muted-foreground font-body">
+                  <span>{post.category}</span>
+                  <span>•</span>
+                  <span>
+                    {new Date(post.date).toLocaleDateString(i18n.language, {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </span>
+                </div>
 
-              <Link
-                to="/news/$slug"
-                params={{ slug: post.slug }}
-                className="mt-5 inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-              >
-                {t("home.news.readMore")}
-              </Link>
+                <h2 className="font-display text-2xl text-foreground">
+                  <Link
+                    to={`/news/${post.slug}`}
+                    className="transition-colors hover:text-primary"
+                  >
+                    {post.title}
+                  </Link>
+                </h2>
+                <p className="mt-3 text-muted-foreground font-body">
+                  {post.excerpt}
+                </p>
+
+                <Link
+                  to={`/news/${post.slug}`}
+                  className="mt-5 inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  {t("home.news.readMore")}
+                </Link>
+              </div>
             </article>
           ))}
         </div>
@@ -82,4 +93,3 @@ function NewsListPage() {
     </main>
   );
 }
-

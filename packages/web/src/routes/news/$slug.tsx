@@ -43,6 +43,10 @@ function NewsDetailPage() {
         <h1 className="font-display text-4xl text-foreground md:text-5xl">{post.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground font-body">{post.excerpt}</p>
 
+        <div className="mt-8 overflow-hidden rounded-lg">
+          <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
+        </div>
+
         <div className="mt-8 flex gap-3">
           <Button variant="hero-outline" asChild>
             <Link to="/news">{t("news.backToNews")}</Link>

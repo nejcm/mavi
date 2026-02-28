@@ -34,25 +34,39 @@ const NewsSection = () => {
           {latestNews.map((post) => (
             <article
               key={post.id}
-              className="rounded-lg border border-border/70 bg-card p-6 transition-colors hover:border-primary/40"
+              className="overflow-hidden rounded-lg border border-border/70 bg-card transition-colors hover:border-primary/40"
             >
-              <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted-foreground font-body">
-                {new Date(post.date).toLocaleDateString(i18n.language, {
-                  day: "2-digit",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </p>
-              <h3 className="font-display text-xl text-foreground">{post.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground font-body">{post.excerpt}</p>
+              <div className="aspect-16/10 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
 
-              <Link
-                to="/news/$slug"
-                params={{ slug: post.slug }}
-                className="mt-5 inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-              >
-                {t("home.news.readMore")}
-              </Link>
+              <div className="p-6">
+                <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted-foreground font-body">
+                  {new Date(post.date).toLocaleDateString(i18n.language, {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+                <h3 className="font-display text-xl text-foreground">
+                  {post.title}
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground font-body">
+                  {post.excerpt}
+                </p>
+
+                <Link
+                  to={`/news/${post.slug}`}
+                  className="mt-5 inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  {t("home.news.readMore")}
+                </Link>
+              </div>
             </article>
           ))}
         </div>
@@ -62,4 +76,3 @@ const NewsSection = () => {
 };
 
 export default NewsSection;
-

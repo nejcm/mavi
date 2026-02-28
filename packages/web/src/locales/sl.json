@@ -8,6 +8,10 @@
     "contact": "Kontakt"
   },
   "home": {
+    "logos": {
+      "eyebrow": "Zaupajo nam ekipe",
+      "heading": "Izbira arhitektov in izvajalcev"
+    },
     "news": {
       "eyebrow": "Zadnje novice",
       "heading": "Novice in vpogledi",

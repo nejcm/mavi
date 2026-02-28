@@ -5,15 +5,19 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const navLinks = [
-  { key: "about", href: "#about" },
-  { key: "products", href: "#products" },
-  { key: "whyUs", href: "#why-us" },
-  { key: "projects", href: "#projects" },
-  { key: "news", to: "/news" as const },
-  { key: "contact", href: "#contact" },
+  { key: "about", href: "/#about" },
+  { key: "products", href: "/#products" },
+  { key: "whyUs", href: "/#why-us" },
+  { key: "projects", href: "/#projects" },
+  { key: "news", to: "/#news" as const },
+  { key: "contact", href: "/#contact" },
 ];
 
-const Header = () => {
+export interface HeaderProps {
+  isDark?: boolean;
+}
+
+const Header = ({ isDark }: HeaderProps) => {
   const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,20 +34,20 @@ const Header = () => {
         className={`mx-auto flex h-16 items-center justify-between px-6 transition-all duration-500 ${
           scrolled
             ? "max-w-5xl rounded-full border-none bg-background/50 text-foreground shadow-sm backdrop-blur-sm"
-            : "max-w-7xl bg-transparent text-white"
+            : `max-w-7xl bg-transparent ${isDark ? "text-white" : "text-foreground"}`
         }`}
       >
-        <a href="#" className="font-display text-xl tracking-wide">
+        <a href="/#" className="font-display text-xl tracking-wide">
           AQUA<span className="font-light">HAUS</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link) =>
             link.to ? (
               <Link
                 key={link.key}
                 to={link.to}
-                className={`text-sm tracking-wider uppercase ${scrolled ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
+                className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
               </Link>
@@ -51,12 +55,12 @@ const Header = () => {
               <a
                 key={link.key}
                 href={link.href}
-                className={`text-sm tracking-wider uppercase ${scrolled ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
+                className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
               </a>
-            )
-          ))}
+            ),
+          )}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -79,13 +83,13 @@ const Header = () => {
           }`}
         >
           <nav className="flex flex-col gap-4 px-6 py-6">
-            {navLinks.map((link) => (
+            {navLinks.map((link) =>
               link.to ? (
                 <Link
                   key={link.key}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase ${scrolled ? "hover:text-black" : "hover:text-gray-200"} py-2`}
+                  className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
                 >
                   {t(`nav.${link.key}`)}
                 </Link>
@@ -94,14 +98,14 @@ const Header = () => {
                   key={link.key}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase ${scrolled ? "hover:text-black" : "hover:text-gray-200"} py-2`}
+                  className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
                 >
                   {t(`nav.${link.key}`)}
                 </a>
-              )
-            ))}
+              ),
+            )}
             <div className="mt-4 flex flex-col gap-2">
-              <LocaleSwitcher scrolled={scrolled} />
+              <LocaleSwitcher scrolled={scrolled} isDark={isDark} />
             </div>
           </nav>
         </div>

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import AboutSection from "../components/home/AboutSection";
 import CTASection from "../components/home/CTASection";
+import CompanyLogos from "../components/home/CompanyLogos";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import Footer from "../components/home/Footer";
 import Header from "../components/home/Header";
@@ -18,14 +19,15 @@ export const Route = createFileRoute("/")({
 function IndexPage() {
   return (
     <main>
-      <Header />
+      <Header isDark />
       <HeroSection />
+      <CompanyLogos />
       <AboutSection />
       <ProductCategories />
       <WhyChooseUs />
       <FeaturedProjects />
-      <NewsSection />
       <Testimonials />
+      <NewsSection />
       <CTASection />
       <Footer />
     </main>

@@ -8,6 +8,10 @@
     "contact": "Contact"
   },
   "home": {
+    "logos": {
+      "eyebrow": "Trusted by teams",
+      "heading": "Preferred by architects and contractors"
+    },
     "news": {
       "eyebrow": "Latest updates",
       "heading": "News & Insights",

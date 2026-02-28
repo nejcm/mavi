@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 
 export interface LocaleSwitcherProps {
   scrolled: boolean;
+  isDark?: boolean;
 }
 
 const locales: { value: Locale; label: string; flagSrc: string }[] = [
@@ -18,7 +19,7 @@ const locales: { value: Locale; label: string; flagSrc: string }[] = [
   { value: "sl", label: "Slovenščina", flagSrc: "/images/flags/si.svg" },
 ];
 
-export function LocaleSwitcher({ scrolled }: LocaleSwitcherProps) {
+export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
   const { i18n } = useTranslation();
   const locale = useAppStore((s) => s.locale);
   const setLocale = useAppStore((s) => s.setLocale);
@@ -36,7 +37,7 @@ export function LocaleSwitcher({ scrolled }: LocaleSwitcherProps) {
         <Button
           variant="unstyled"
           size="icon"
-          className={`${scrolled ? "hover:text-black" : "hover:text-gray-200"} text-inherit`}
+          className={`${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} text-inherit`}
           aria-label={
             currentLocale
               ? `Language: ${currentLocale.label}`

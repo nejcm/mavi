@@ -1,3 +1,9 @@
+import catShowers from "@/assets/cat-showers.jpg";
+import catFaucets from "@/assets/cat-faucets.jpg";
+import catToilets from "@/assets/cat-toilets.jpg";
+import catBathtubs from "@/assets/cat-bathtubs.jpg";
+import projectHotel from "@/assets/project-hotel.jpg";
+
 export interface NewsPost {
   id: string;
   slug: string;
@@ -5,6 +11,8 @@ export interface NewsPost {
   excerpt: string;
   content: string[];
   date: string;
+  image: string;
+  imageAlt: string;
   category?: string;
   featured?: boolean;
 }
@@ -22,6 +30,8 @@ const posts: NewsPost[] = [
       "In practice, partners can expect better product availability, reduced stock gaps for core lines, and more predictable delivery schedules across key markets.",
     ],
     date: "2026-02-20",
+    image: projectHotel,
+    imageAlt: "Warehouse and distribution operations overview",
     category: "Operations",
     featured: true,
   },
@@ -37,6 +47,8 @@ const posts: NewsPost[] = [
       "Technical data sheets and availability timelines are now ready for specification teams and can be requested through your account manager.",
     ],
     date: "2026-02-14",
+    image: catFaucets,
+    imageAlt: "Premium faucet products on display",
     category: "Products",
   },
   {
@@ -51,6 +63,8 @@ const posts: NewsPost[] = [
       "The program is now open in selected regions, with broader rollout planned through the rest of the year.",
     ],
     date: "2026-02-05",
+    image: catShowers,
+    imageAlt: "Design partner collaboration and consultation",
     category: "Partnerships",
   },
   {
@@ -65,6 +79,8 @@ const posts: NewsPost[] = [
       "Each training day includes live demonstrations and Q&A with product specialists.",
     ],
     date: "2026-01-28",
+    image: catToilets,
+    imageAlt: "Showroom product training session",
     category: "Events",
   },
   {
@@ -79,6 +95,8 @@ const posts: NewsPost[] = [
       "Detailed outcomes from the project will be published in an extended technical case study this quarter.",
     ],
     date: "2026-01-16",
+    image: catBathtubs,
+    imageAlt: "Hotel bathroom renovation case study",
     category: "Projects",
   },
 ];
