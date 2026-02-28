@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "whyUs": "Why Us",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "home": {
+    "news": {
+      "eyebrow": "Latest updates",
+      "heading": "News & Insights",
+      "subheading": "Recent updates from AquaHaus, including product announcements, partner highlights, and project milestones.",
+      "viewAll": "View all news",
+      "readMore": "Read more"
+    }
+  },
+  "news": {
+    "eyebrow": "Newsroom",
+    "pageTitle": "Latest News",
+    "pageDescription": "Explore announcements, project highlights, and product updates from AquaHaus.",
+    "backHome": "Back to home",
+    "backToNews": "Back to all news"
+  },
+  "cta": {
+    "getInTouch": "Get in Touch",
+    "partnerWithUs": "Partner With Us",
+    "letsWorkTogether": "Let's Work Together"
+  },
+  "common": {
+    "returnHome": "Return to Home",
+    "notFound": "Oops! Page not found"
+  }
+}

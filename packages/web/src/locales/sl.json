@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "about": "O nas",
+    "products": "Izdelki",
+    "whyUs": "Zakaj mi",
+    "projects": "Projekti",
+    "news": "Novice",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "news": {
+      "eyebrow": "Zadnje novice",
+      "heading": "Novice in vpogledi",
+      "subheading": "Najnovejše objave AquaHaus: napovedi izdelkov, partnerstva in pomembni mejniki projektov.",
+      "viewAll": "Vse novice",
+      "readMore": "Preberi več"
+    }
+  },
+  "news": {
+    "eyebrow": "Novičnik",
+    "pageTitle": "Najnovejše novice",
+    "pageDescription": "Preglejte napovedi, projektne poudarke in produktne novosti AquaHaus.",
+    "backHome": "Nazaj na domačo stran",
+    "backToNews": "Nazaj na vse novice"
+  },
+  "cta": {
+    "getInTouch": "Stopite v stik",
+    "partnerWithUs": "Sodelujte z nami",
+    "letsWorkTogether": "Sodelujmo"
+  },
+  "common": {
+    "returnHome": "Nazaj na domačo",
+    "notFound": "Stran ni bila najdena"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "react"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "off"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "eslint/no-shadow": "off"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/dist-ssr/**",
+    "**/coverage/**",
+    "**/.vite/**",
+    "**/*.gen.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/test/**", "**/e2e/**"],
+      "plugins": ["eslint", "typescript", "unicorn", "oxc", "react", "vitest"],
+      "rules": {
+        "vitest/no-disabled-tests": "off"
+      }
+    }
+  ]
+}
