@@ -9,7 +9,10 @@ test.describe("Smoke", () => {
 
   test("navigation to contact section works", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: /contact|kontakt/i }).first().click();
+    await page
+      .getByRole("link", { name: /contact|kontakt/i })
+      .first()
+      .click();
     await expect(page.locator("#contact")).toBeVisible();
   });
 
