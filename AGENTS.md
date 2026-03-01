@@ -10,22 +10,22 @@ Target runtime constraints come from `package.json` engines (`bun` 1.3.9, Node >
 
 Run commands from the repository root unless noted otherwise.
 
-| Purpose | Command |
-| --- | --- |
-| Install dependencies | `bun install` |
-| Run all apps in dev | `bun run dev` |
-| Run web only (port 3000) | `bun run dev:web` |
-| Run server only (port 3001) | `bun run dev:server` |
-| Build all | `bun run build` |
-| Build web only | `bun run build:web` |
-| Build server only | `bun run build:server` |
-| Lint | `bun run lint` |
-| Format | `bun run format` |
-| Format check | `bun run format:check` |
-| TypeScript check | `bun run lint:ts` |
-| Unit tests | `bun run test` |
-| E2E tests | `bun run test:e2e` |
-| Dead-code check | `bun run knip` |
+| Purpose                     | Command                |
+| --------------------------- | ---------------------- |
+| Install dependencies        | `bun install`          |
+| Run all apps in dev         | `bun run dev`          |
+| Run web only (port 3000)    | `bun run dev:web`      |
+| Run server only (port 3001) | `bun run dev:server`   |
+| Build all                   | `bun run build`        |
+| Build web only              | `bun run build:web`    |
+| Build server only           | `bun run build:server` |
+| Lint                        | `bun run lint`         |
+| Format                      | `bun run format`       |
+| Format check                | `bun run format:check` |
+| TypeScript check            | `bun run lint:ts`      |
+| Unit tests                  | `bun run test`         |
+| E2E tests                   | `bun run test:e2e`     |
+| Dead-code check             | `bun run knip`         |
 
 If E2E browsers are missing, install once from repo root with `bunx playwright install --with-deps chromium`.
 
