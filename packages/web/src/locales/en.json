@@ -32,6 +32,14 @@
     "partnerWithUs": "Partner With Us",
     "letsWorkTogether": "Let's Work Together"
   },
+  "contact": {
+    "eyebrow": "Contact Us",
+    "heading": "Find Our Offices",
+    "description": "Visit one of our 9 showrooms across Slovenia or get in touch with our team directly.",
+    "selectOffice": "Select an office",
+    "mapHint": "Double-click the map to enable/disable interaction",
+    "mapUnavailable": "Map is currently unavailable"
+  },
   "common": {
     "returnHome": "Return to Home",
     "notFound": "Oops! Page not found"

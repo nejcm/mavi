@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import AboutSection from "../components/home/AboutSection";
-import CTASection from "../components/home/CTASection";
 import CompanyLogos from "../components/home/CompanyLogos";
+import ContactSection from "../components/home/ContactSection";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import Footer from "../components/home/Footer";
 import Header from "../components/home/Header";
@@ -28,7 +28,7 @@ function IndexPage() {
       <FeaturedProjects />
       <Testimonials />
       <NewsSection />
-      <CTASection />
+      <ContactSection />
       <Footer />
     </main>
   );

@@ -32,6 +32,14 @@
     "partnerWithUs": "Sodelujte z nami",
     "letsWorkTogether": "Sodelujmo"
   },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading": "Naše poslovalnice",
+    "description": "Obiščite eno izmed 9 poslovalnic po Sloveniji ali nas kontaktirajte neposredno.",
+    "selectOffice": "Izberite poslovalnico",
+    "mapHint": "Dvokliknite na zemljevid za vklop/izklop interakcije",
+    "mapUnavailable": "Zemljevid trenutno ni na voljo"
+  },
   "common": {
     "returnHome": "Nazaj na domačo",
     "notFound": "Stran ni bila najdena"

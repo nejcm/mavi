@@ -67,4 +67,3 @@ function NewsDetailPage() {
     </main>
   );
 }
-

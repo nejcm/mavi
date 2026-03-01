@@ -12,7 +12,7 @@
     "build": "bun run --filter '*' build",
     "build:web": "bun run --filter @mavi/web build",
     "build:server": "bun run --filter @mavi/server build",
-    "test": "bun run --filter @mavi/web test",
+    "test": "bun run --filter '*' test",
     "test:e2e": "bun run --filter @mavi/web test:e2e",
     "knip": "knip",
     "lint": "oxlint --deny-warnings .",

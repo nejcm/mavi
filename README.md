@@ -28,11 +28,12 @@ bun run build:server
 
 Create `.env` in `packages/web` (or set in CI):
 
-| Variable            | Description                                               |
-| ------------------- | --------------------------------------------------------- |
-| `VITE_POSTHOG_KEY`  | PostHog project API key; if unset, analytics are disabled |
-| `VITE_POSTHOG_HOST` | PostHog host (default: `https://eu.i.posthog.com`)        |
-| `VITE_API_URL`      | API base URL (default: `http://localhost:3001`)           |
+| Variable                   | Description                                                        |
+| -------------------------- | ------------------------------------------------------------------ |
+| `VITE_POSTHOG_KEY`         | PostHog project API key; if unset, analytics are disabled          |
+| `VITE_POSTHOG_HOST`        | PostHog host (default: `https://eu.i.posthog.com`)                 |
+| `VITE_API_URL`             | API base URL (default: `http://localhost:3001`)                    |
+| `VITE_GOOGLE_MAPS_API_KEY` | Google Maps JavaScript API key; if unset the contact map is hidden |
 
 ## Tests
 

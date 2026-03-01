@@ -38,11 +38,7 @@ export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
           variant="unstyled"
           size="icon"
           className={`${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} text-inherit`}
-          aria-label={
-            currentLocale
-              ? `Language: ${currentLocale.label}`
-              : "Change language"
-          }
+          aria-label={currentLocale ? `Language: ${currentLocale.label}` : "Change language"}
         >
           <LanguagesIcon size={20} />
           <span className="leading-none capitalize" aria-hidden>
