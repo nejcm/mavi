@@ -53,12 +53,8 @@ const NewsSection = () => {
                     year: "numeric",
                   })}
                 </p>
-                <h3 className="font-display text-xl text-foreground">
-                  {post.title}
-                </h3>
-                <p className="mt-3 text-sm text-muted-foreground font-body">
-                  {post.excerpt}
-                </p>
+                <h3 className="font-display text-xl text-foreground">{post.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground font-body">{post.excerpt}</p>
 
                 <Link
                   to={`/news/${post.slug}`}

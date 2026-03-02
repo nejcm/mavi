@@ -66,16 +66,11 @@ function NewsListPage() {
                 </div>
 
                 <h2 className="font-display text-2xl text-foreground">
-                  <Link
-                    to={`/news/${post.slug}`}
-                    className="transition-colors hover:text-primary"
-                  >
+                  <Link to={`/news/${post.slug}`} className="transition-colors hover:text-primary">
                     {post.title}
                   </Link>
                 </h2>
-                <p className="mt-3 text-muted-foreground font-body">
-                  {post.excerpt}
-                </p>
+                <p className="mt-3 text-muted-foreground font-body">{post.excerpt}</p>
 
                 <Link
                   to={`/news/${post.slug}`}

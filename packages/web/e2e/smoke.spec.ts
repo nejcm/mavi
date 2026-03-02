@@ -4,13 +4,13 @@ test.describe("Smoke", () => {
   test("home page loads and shows main content", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("main")).toBeVisible();
-    await expect(page.getByText(/AQUA/i)).toBeVisible();
+    await expect(page.getByRole("link", { name: "AQUAHAUS" })).toBeVisible();
   });
 
   test("navigation to contact section works", async ({ page }) => {
     await page.goto("/");
     await page
-      .getByRole("link", { name: /get in touch/i })
+      .getByRole("link", { name: /contact|kontakt/i })
       .first()
       .click();
     await expect(page.locator("#contact")).toBeVisible();
