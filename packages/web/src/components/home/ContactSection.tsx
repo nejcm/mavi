@@ -9,7 +9,13 @@ import {
 } from "@/components/ui/dialog";
 import { OFFICE_LOCATIONS, type OfficeLocation } from "@/data/offices";
 import { cn } from "@/lib/utils";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import {
+  APILoadingStatus,
+  APIProvider,
+  Map,
+  Marker,
+  useApiLoadingStatus,
+} from "@vis.gl/react-google-maps";
 import { motion } from "framer-motion";
 import { MapPin, Phone } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -19,10 +25,8 @@ const SLOVENIA_CENTER = { lat: 46.15, lng: 14.95 };
 const DEFAULT_ZOOM = 8;
 const SELECTED_ZOOM = 14;
 
-const mapContainerStyle = {
-  width: "100%",
-  height: "100%",
-};
+/** Custom marker image matching mavi.si/info */
+const MARKER_ICON = "/images/marker.png";
 
 function useInViewOnce(rootMargin = "200px") {
   const ref = useRef<HTMLElement | null>(null);
@@ -48,45 +52,32 @@ function useInViewOnce(rootMargin = "200px") {
   return { ref, visible };
 }
 
-// Isolated component so useJsApiLoader is only called once with the real key
-function OfficeMap({
+function OfficeMapContent({
   selectedOffice,
   onMarkerClick,
   mapInteractive,
   onDblClick,
-  onMapLoad,
+  mapHint,
+  mapUnavailable,
 }: {
   selectedOffice: OfficeLocation | null;
   onMarkerClick: (office: OfficeLocation) => void;
   mapInteractive: boolean;
   onDblClick: () => void;
-  onMapLoad: (map: google.maps.Map) => void;
+  mapHint: string;
+  mapUnavailable: string;
 }) {
-  const { t } = useTranslation();
+  const status = useApiLoadingStatus();
 
-  const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY ?? "",
-  });
-
-  const mapOptions: google.maps.MapOptions = {
-    draggable: mapInteractive,
-    scrollwheel: mapInteractive,
-    disableDoubleClickZoom: true,
-    zoomControl: mapInteractive,
-    streetViewControl: false,
-    fullscreenControl: false,
-    mapTypeControl: false,
-  };
-
-  if (loadError) {
+  if (status === APILoadingStatus.FAILED) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm">
-        {t("contact.mapUnavailable")}
+        {mapUnavailable}
       </div>
     );
   }
 
-  if (!isLoaded) {
+  if (status !== APILoadingStatus.LOADED) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm animate-pulse">
         Loading map…
@@ -94,30 +85,39 @@ function OfficeMap({
     );
   }
 
+  const center = selectedOffice
+    ? { lat: selectedOffice.lat, lng: selectedOffice.lng }
+    : SLOVENIA_CENTER;
+  const zoom = selectedOffice ? SELECTED_ZOOM : DEFAULT_ZOOM;
+
   return (
     <>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={
-          selectedOffice ? { lat: selectedOffice.lat, lng: selectedOffice.lng } : SLOVENIA_CENTER
-        }
-        zoom={selectedOffice ? SELECTED_ZOOM : DEFAULT_ZOOM}
-        onLoad={onMapLoad}
-        onDblClick={onDblClick}
-        options={mapOptions}
+      <Map
+        center={center}
+        zoom={zoom}
+        onDblclick={onDblClick}
+        disableDoubleClickZoom
+        draggable={mapInteractive}
+        scrollwheel={mapInteractive}
+        zoomControl={mapInteractive}
+        streetViewControl={false}
+        fullscreenControl={false}
+        mapTypeControl={false}
+        style={{ width: "100%", height: "100%" }}
       >
         {OFFICE_LOCATIONS.map((office) => (
           <Marker
             key={office.id}
             position={{ lat: office.lat, lng: office.lng }}
             title={office.name}
+            icon={MARKER_ICON}
             onClick={() => onMarkerClick(office)}
             opacity={!selectedOffice || selectedOffice.id === office.id ? 1 : 0.5}
           />
         ))}
-      </GoogleMap>
+      </Map>
       <div className="absolute bottom-3 left-3 bg-background/90 backdrop-blur-sm text-xs text-muted-foreground px-3 py-1.5 rounded-md pointer-events-none">
-        {t("contact.mapHint")}
+        {mapHint}
       </div>
     </>
   );
@@ -128,31 +128,21 @@ const ContactSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedOffice, setSelectedOffice] = useState<OfficeLocation | null>(null);
   const [mapInteractive, setMapInteractive] = useState(false);
-  const mapRef = useRef<google.maps.Map | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const { ref: sectionRef, visible: sectionVisible } = useInViewOnce("400px");
 
-  const hasApiKey = (import.meta.env.VITE_GOOGLE_MAPS_API_KEY ?? "").length > 0;
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY ?? "";
+  const hasApiKey = apiKey.length > 0;
   const shouldMount = sectionVisible && hasApiKey;
-
-  const onMapLoad = useCallback((map: google.maps.Map) => {
-    mapRef.current = map;
-  }, []);
 
   const handleSelectOffice = useCallback((office: OfficeLocation) => {
     setSelectedOffice(office);
-    if (mapRef.current) {
-      mapRef.current.panTo({ lat: office.lat, lng: office.lng });
-      mapRef.current.setZoom(SELECTED_ZOOM);
-    }
+    const el = listRef.current?.querySelector(`[data-office="${office.id}"]`);
+    el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, []);
 
   const handleMarkerClick = useCallback((office: OfficeLocation) => {
     setSelectedOffice(office);
-    if (mapRef.current) {
-      mapRef.current.panTo({ lat: office.lat, lng: office.lng });
-      mapRef.current.setZoom(SELECTED_ZOOM);
-    }
     const el = listRef.current?.querySelector(`[data-office="${office.id}"]`);
     el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, []);
@@ -163,7 +153,7 @@ const ContactSection = () => {
 
   return (
     <section ref={sectionRef} id="contact" className="py-24 md:py-32 bg-secondary">
-      <div className="container mx-auto px-6">
+      <div className="max-w-[1920px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +172,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-8 px-6">
           {/* Office list */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -204,7 +194,7 @@ const ContactSection = () => {
                   data-office={office.id}
                   onClick={() => handleSelectOffice(office)}
                   className={cn(
-                    "w-full text-left px-4 py-3 rounded-lg transition-colors",
+                    "w-full text-left px-4 py-3 rounded-lg transition-colors cursor-pointer",
                     "hover:bg-background/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                     selectedOffice?.id === office.id
                       ? "bg-background shadow-sm ring-1 ring-border"
@@ -240,13 +230,16 @@ const ContactSection = () => {
           >
             <div className="relative rounded-lg overflow-hidden bg-muted min-h-[400px] h-[400px] lg:h-full">
               {shouldMount ? (
-                <OfficeMap
-                  selectedOffice={selectedOffice}
-                  onMarkerClick={handleMarkerClick}
-                  mapInteractive={mapInteractive}
-                  onDblClick={handleMapDblClick}
-                  onMapLoad={onMapLoad}
-                />
+                <APIProvider apiKey={apiKey}>
+                  <OfficeMapContent
+                    selectedOffice={selectedOffice}
+                    onMarkerClick={handleMarkerClick}
+                    mapInteractive={mapInteractive}
+                    onDblClick={handleMapDblClick}
+                    mapHint={t("contact.mapHint")}
+                    mapUnavailable={t("contact.mapUnavailable")}
+                  />
+                </APIProvider>
               ) : !hasApiKey ? (
                 <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm">
                   {t("contact.mapUnavailable")}
@@ -279,7 +272,9 @@ const ContactSection = () => {
               <DialogHeader>
                 <DialogTitle>{t("cta.getInTouch")}</DialogTitle>
               </DialogHeader>
-              <ContactForm />
+              <div className="w-full">
+                <ContactForm />
+              </div>
             </DialogContent>
           </Dialog>
         </motion.div>
