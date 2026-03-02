@@ -37,8 +37,9 @@ const Header = ({ isDark }: HeaderProps) => {
             : `max-w-7xl bg-transparent ${isDark ? "text-white" : "text-foreground"}`
         }`}
       >
-        <a href="/#" className="font-display text-xl tracking-wide">
-          AQUA<span className="font-light">HAUS</span>
+        <a href="/#" className="flex items-center gap-3">
+          <img src="/img/mavi_logo.png" alt="Mavi d.o.o." className="h-8 w-auto" />
+          <span className="sr-only">Mavi d.o.o.</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
