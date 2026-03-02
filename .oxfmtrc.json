@@ -16,6 +16,15 @@
     "**/dist-ssr/**",
     "**/coverage/**",
     "**/.vite/**",
-    "**/*.gen.ts"
+    "**/*.gen.ts",
+    "**/.agents/**",
+    "**/.claude/**",
+    "skills-lock.json",
+    "**/*.md",
+    "**/*.html",
+    "**/*.css",
+    "**/*.json",
+    "**/*.yml",
+    "**/*.yaml"
   ]
 }

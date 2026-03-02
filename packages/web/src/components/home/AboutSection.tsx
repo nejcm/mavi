@@ -25,7 +25,7 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
               <p>
-                For over a decade, AquaHaus has been the trusted wholesale partner for architects,
+                For over a decade, Mavi has been the trusted wholesale partner for architects,
                 designers, and developers seeking premium bathroom solutions. We source the finest
                 fixtures and fittings from world-renowned manufacturers.
               </p>

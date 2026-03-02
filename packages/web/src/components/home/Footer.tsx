@@ -19,7 +19,7 @@ const Footer = () => {
               Contact
             </h4>
             <div className="space-y-2 text-sm text-primary-foreground/60 font-body">
-              <p>info@aquahaus.com</p>
+              <p>info@mavi.si</p>
               <p>+1 (555) 234-5678</p>
               <p>
                 123 Design District
@@ -61,7 +61,7 @@ const Footer = () => {
         <Separator className="bg-primary-foreground/10 mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/40 font-body">
-          <p>© 2026 AquaHaus. All rights reserved.</p>
+          <p>© 2026 Mavi d.o.o.. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary-foreground/70 transition-colors">
               Privacy Policy

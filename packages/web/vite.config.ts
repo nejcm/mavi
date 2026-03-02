@@ -1,5 +1,4 @@
 import tailwindcss from "@tailwindcss/vite";
-import { devtools } from "@tanstack/devtools-vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -7,10 +6,8 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: process.env.GITHUB_PAGES_BASE ?? "/",
-  plugins: [
-    devtools(),
+export default defineConfig(async ({ command }) => {
+  const plugins = [
     tsConfigPaths(),
     tanstackRouter({
       routesDirectory: "./src/routes",
@@ -18,17 +15,27 @@ export default defineConfig({
     }),
     react(),
     tailwindcss(),
-  ],
-  server: {
-    host: "::",
-    port: 3000,
-    hmr: {
-      overlay: false,
+  ];
+
+  if (command === "serve") {
+    const { devtools } = await import("@tanstack/devtools-vite");
+    plugins.unshift(devtools());
+  }
+
+  return {
+    base: process.env.GITHUB_PAGES_BASE ?? "/",
+    plugins,
+    server: {
+      host: "::",
+      port: 3000,
+      hmr: {
+        overlay: false,
+      },
     },
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
+  };
 });

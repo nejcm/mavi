@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "AquaHaus has been our go-to wholesale partner for three years. Their product quality and reliability are unmatched in the industry.",
+      "Mavi has been our go-to wholesale partner for three years. Their product quality and reliability are unmatched in the industry.",
     name: "Sarah Mitchell",
     title: "Head of Procurement",
     company: "Sterling Developments Ltd.",
