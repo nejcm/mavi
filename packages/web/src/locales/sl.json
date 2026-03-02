@@ -12,6 +12,72 @@
       "eyebrow": "Zaupajo nam ekipe",
       "heading": "Izbira arhitektov in izvajalcev"
     },
+    "productCategories": {
+      "eyebrow": "Prodajni program",
+      "heading": "Kategorije prodaje",
+      "subheading": "Celovita ponudba za vodovodne instalacije, sanitarno opremo, ogrevanje, keramiko in prezračevanje.",
+      "categories": {
+        "waterworks": {
+          "title": "Vodovod",
+          "items": {
+            "installationMaterial": "Inštalacijski material",
+            "insulation": "Izolacija",
+            "valves": "Ventili",
+            "siphons": "Sifoni",
+            "filters": "Filtri"
+          }
+        },
+        "sanitaryEquipment": {
+          "title": "Sanitarna oprema",
+          "items": {
+            "sanitaryCeramics": "Sanitarna keramika",
+            "sanitaryFaucets": "Sanitarne armature",
+            "bathtubsAndShowerTrays": "Kopalne kadi, tuš kadi",
+            "showerCabinsAndScreens": "Tuš kabine, pršni zasloni",
+            "massageSystems": "Masažni sistemi",
+            "bathroomFurniture": "Kopalniško pohištvo",
+            "bathroomAccessories": "Kopalniški dodatki"
+          }
+        },
+        "heating": {
+          "title": "Ogrevanje",
+          "items": {
+            "heatingBoilers": "Kotli za ogrevanje",
+            "electricFurnaces": "Električne peči",
+            "burners": "Gorilniki",
+            "heatPumps": "Toplotne črpalke",
+            "fireplaces": "Kamini",
+            "controls": "Regulacije",
+            "classicRadiators": "Radiatorji - klasični",
+            "bathroomRadiators": "Radiatorji - kopalniški",
+            "electricRadiators": "Radiatorji - električni",
+            "floorHeating": "Talno ogrevanje",
+            "waterHeaters": "Grelniki vode",
+            "oilTanks": "Cisterne za olje",
+            "pumpsAndMixingValves": "Črpalke in mešalni ventili",
+            "chimneySystems": "Dimniški sistemi",
+            "solarSystems": "Solarni sistemi",
+            "radiatorValvesAndManifolds": "Radiatorski ventili in razdelilci",
+            "insulation": "Izolacija"
+          }
+        },
+        "ceramicTiles": {
+          "title": "Keramične ploščice",
+          "items": {
+            "ceramicTiles": "Keramične ploščice",
+            "adhesivesGroutsAndSilicones": "Lepila, fugirne mase in silikonski kiti",
+            "trims": "Letve"
+          }
+        },
+        "ventilation": {
+          "title": "Prezračevanje",
+          "items": {
+            "airConditioningUnits": "Klimatske naprave",
+            "ventilationDevices": "Naprave za prezračevanje"
+          }
+        }
+      }
+    },
     "news": {
       "eyebrow": "Zadnje novice",
       "heading": "Novice in vpogledi",

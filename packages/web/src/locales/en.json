@@ -12,6 +12,72 @@
       "eyebrow": "Trusted by teams",
       "heading": "Preferred by architects and contractors"
     },
+    "productCategories": {
+      "eyebrow": "Sales program",
+      "heading": "Sales Categories",
+      "subheading": "Comprehensive offering for plumbing installations, sanitary equipment, heating, ceramic tiles, and ventilation.",
+      "categories": {
+        "waterworks": {
+          "title": "Waterworks",
+          "items": {
+            "installationMaterial": "Installation materials",
+            "insulation": "Insulation",
+            "valves": "Valves",
+            "siphons": "Siphons",
+            "filters": "Filters"
+          }
+        },
+        "sanitaryEquipment": {
+          "title": "Sanitary Equipment",
+          "items": {
+            "sanitaryCeramics": "Sanitary ceramics",
+            "sanitaryFaucets": "Sanitary faucets",
+            "bathtubsAndShowerTrays": "Bathtubs and shower trays",
+            "showerCabinsAndScreens": "Shower cabins and screens",
+            "massageSystems": "Massage systems",
+            "bathroomFurniture": "Bathroom furniture",
+            "bathroomAccessories": "Bathroom accessories"
+          }
+        },
+        "heating": {
+          "title": "Heating",
+          "items": {
+            "heatingBoilers": "Heating boilers",
+            "electricFurnaces": "Electric furnaces",
+            "burners": "Burners",
+            "heatPumps": "Heat pumps",
+            "fireplaces": "Fireplaces",
+            "controls": "Controls",
+            "classicRadiators": "Classic radiators",
+            "bathroomRadiators": "Bathroom radiators",
+            "electricRadiators": "Electric radiators",
+            "floorHeating": "Underfloor heating",
+            "waterHeaters": "Water heaters",
+            "oilTanks": "Oil tanks",
+            "pumpsAndMixingValves": "Pumps and mixing valves",
+            "chimneySystems": "Chimney systems",
+            "solarSystems": "Solar systems",
+            "radiatorValvesAndManifolds": "Radiator valves and manifolds",
+            "insulation": "Insulation"
+          }
+        },
+        "ceramicTiles": {
+          "title": "Ceramic Tiles",
+          "items": {
+            "ceramicTiles": "Ceramic tiles",
+            "adhesivesGroutsAndSilicones": "Adhesives, grouts, and silicone sealants",
+            "trims": "Trims"
+          }
+        },
+        "ventilation": {
+          "title": "Ventilation",
+          "items": {
+            "airConditioningUnits": "Air conditioning units",
+            "ventilationDevices": "Ventilation devices"
+          }
+        }
+      }
+    },
     "news": {
       "eyebrow": "Latest updates",
       "heading": "News & Insights",

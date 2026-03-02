@@ -1,15 +1,41 @@
 import { motion } from "framer-motion";
 
+import projectCommercial from "@/assets/project-commercial.jpg";
 import projectHotel from "@/assets/project-hotel.jpg";
 import projectResidential from "@/assets/project-residential.jpg";
 import projectSpa from "@/assets/project-spa.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
 
 const projects = [
-  { title: "Luxury Hotel Project", location: "Dubai, UAE", image: projectHotel },
-  { title: "Residential Development", location: "London, UK", image: projectResidential },
-  { title: "Wellness Spa Resort", location: "Bali, Indonesia", image: projectSpa },
-  { title: "Commercial Office Tower", location: "New York, USA", image: projectCommercial },
+  {
+    title: "Luxury Hotel Project",
+    location: "Dubai, UAE",
+    image: projectHotel,
+  },
+  {
+    title: "Residential Development",
+    location: "London, UK",
+    image: projectResidential,
+  },
+  {
+    title: "Wellness Spa Resort",
+    location: "Bali, Indonesia",
+    image: projectSpa,
+  },
+  {
+    title: "Commercial Office Tower",
+    location: "New York, USA",
+    image: projectCommercial,
+  },
+  {
+    title: "Boutique Retail Center",
+    location: "Milan, Italy",
+    image: projectCommercial,
+  },
+  {
+    title: "Coastal Villa Renovation",
+    location: "Split, Croatia",
+    image: projectResidential,
+  },
 ];
 
 const FeaturedProjects = () => {
@@ -29,7 +55,7 @@ const FeaturedProjects = () => {
           <h2 className="font-display text-3xl md:text-4xl text-foreground">Featured Projects</h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <motion.div
               key={p.title}
@@ -39,7 +65,7 @@ const FeaturedProjects = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group relative overflow-hidden rounded-lg cursor-pointer"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-video overflow-hidden">
                 <img
                   src={p.image}
                   alt={p.title}
@@ -47,8 +73,8 @@ const FeaturedProjects = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <div className="absolute inset-0 bg-linear-to-t from-foreground/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="font-display text-xl text-primary-foreground">{p.title}</h3>
                 <p className="text-sm text-primary-foreground/70 font-body mt-1">{p.location}</p>
               </div>
