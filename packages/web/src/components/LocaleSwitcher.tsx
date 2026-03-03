@@ -1,3 +1,6 @@
+import { LanguagesIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -5,22 +8,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAppStore, type Locale } from "@/stores/app-store";
-import { LanguagesIcon } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { useAppStore } from "@/stores/app-store";
+import { type Locale } from "@/i18n";
 
 export interface LocaleSwitcherProps {
   scrolled: boolean;
   isDark?: boolean;
 }
 
-const locales: { value: Locale; label: string; flagSrc: string }[] = [
-  { value: "en", label: "English", flagSrc: "/images/flags/gb.svg" },
-  { value: "sl", label: "Slovenščina", flagSrc: "/images/flags/si.svg" },
+const locales: { value: Locale; labelKey: string; flagSrc: string }[] = [
+  { value: "en", labelKey: "locale.languageEnglish", flagSrc: "/images/flags/gb.svg" },
+  { value: "sl", labelKey: "locale.languageSlovenian", flagSrc: "/images/flags/si.svg" },
+  { value: "hr", labelKey: "locale.languageCroatian", flagSrc: "/images/flags/hr.svg" },
 ];
 
 export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const locale = useAppStore((s) => s.locale);
   const setLocale = useAppStore((s) => s.setLocale);
 
@@ -30,6 +33,7 @@ export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
   };
 
   const currentLocale = locales.find((l) => l.value === locale);
+  const currentLabel = currentLocale ? t(currentLocale.labelKey) : "";
 
   return (
     <DropdownMenu>
@@ -38,7 +42,11 @@ export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
           variant="unstyled"
           size="icon"
           className={`${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} text-inherit`}
-          aria-label={currentLocale ? `Language: ${currentLocale.label}` : "Change language"}
+          aria-label={
+            currentLocale
+              ? t("locale.ariaCurrentLanguage", { language: currentLabel })
+              : t("locale.ariaChangeLanguage")
+          }
         >
           <LanguagesIcon size={20} />
           <span className="leading-none capitalize" aria-hidden>
@@ -47,7 +55,7 @@ export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {locales.map(({ value, label, flagSrc }) => (
+        {locales.map(({ value, labelKey, flagSrc }) => (
           <DropdownMenuItem
             key={value}
             onClick={() => handleChange(value)}
@@ -59,7 +67,7 @@ export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
               className="h-5 w-5 rounded-sm object-cover shrink-0"
               aria-hidden
             />
-            <span>{label}</span>
+            <span>{t(labelKey)}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

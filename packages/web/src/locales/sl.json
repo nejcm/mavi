@@ -84,6 +84,110 @@
       "subheading": "Najnovejše objave Mavi: napovedi izdelkov, partnerstva in pomembni mejniki projektov.",
       "viewAll": "Vse novice",
       "readMore": "Preberi več"
+    },
+    "hero": {
+      "eyebrow": "Veleprodaja kopalniške opreme",
+      "heading": "Vrhunske kopalniške rešitve. Dobavljene v obsegu.",
+      "subheading": "Veleprodajna distribucija za investitorje, projektante in prodajne partnerje.",
+      "primaryCta": "Zahtevaj veleprodajni katalog",
+      "secondaryCta": "Postanite partner",
+      "imageAlt": "Moderna luksuzna kopalnica s prostostoječo kadjo in marmorjem obloženimi stenami"
+    },
+    "about": {
+      "eyebrow": "O nas",
+      "heading": "Zanesljiv vir vrhunske kopalniške opreme",
+      "body1": "Že več kot desetletje je Mavi zaupanja vreden veleprodajni partner arhitektov, projektantov in investitorjev, ki iščejo vrhunske kopalniške rešitve. Sodelujemo z uglednimi proizvajalci in skrbno izbiramo opremo.",
+      "body2": "Naša zaveza kakovosti presega same izdelke – z namenskim osebnim skrbnikom, zanesljivo logistiko in eno največjih zalog v panogi poskrbimo, da so projekti izvedeni pravočasno in v skladu z dogovorjeno specifikacijo.",
+      "body3": "Od butičnih stanovanjskih objektov do velikih hotelskih kompleksov naš tim nudi prilagojene rešitve, ki dosegajo najvišje standarde oblikovanja in funkcionalnosti.",
+      "stats": {
+        "products": "Izdelkov",
+        "partners": "Poslovnih partnerjev",
+        "experience": "Let izkušenj"
+      }
+    },
+    "why": {
+      "eyebrow": "Naše prednosti",
+      "heading": "Zakaj izbrati nas",
+      "features": {
+        "bulkPricing": {
+          "title": "Veleprodajne cene",
+          "desc": "Konkurenčne veleprodajne cene z količinskimi popusti za vse partnerje."
+        },
+        "fastDelivery": {
+          "title": "Hitra dobava",
+          "desc": "Zanesljiva logistika s pospešeno dostavo po celotni regiji."
+        },
+        "qualityControl": {
+          "title": "Nadzor kakovosti",
+          "desc": "Vsak izdelek je temeljito pregledan, preden zapusti naše skladišče."
+        },
+        "accountManagers": {
+          "title": "Osebni skrbniki",
+          "desc": "Namenska podpora za naročila, specifikacije in časovnice projektov."
+        },
+        "globalSourcing": {
+          "title": "Globalne povezave",
+          "desc": "Partnerstva z vodilnimi proizvajalci iz Evrope, Azije in drugih regij."
+        },
+        "customOrders": {
+          "title": "Rešitve po meri",
+          "desc": "Prilagojene rešitve za posebne zahteve in projekte."
+        }
+      }
+    },
+    "projects": {
+      "eyebrow": "Referenčni projekti",
+      "heading": "Izpostavljeni projekti",
+      "items": {
+        "luxuryHotel": {
+          "title": "Luksuzni hotelski projekt",
+          "location": "Dubaj, ZAE"
+        },
+        "residentialDevelopment": {
+          "title": "Stanovanjski kompleks",
+          "location": "London, VB"
+        },
+        "wellnessSpa": {
+          "title": "Wellness in SPA resort",
+          "location": "Bali, Indonezija"
+        },
+        "officeTower": {
+          "title": "Poslovni stolp",
+          "location": "New York, ZDA"
+        },
+        "retailCenter": {
+          "title": "Butični trgovski center",
+          "location": "Milano, Italija"
+        },
+        "coastalVilla": {
+          "title": "Obalna vila – prenova",
+          "location": "Split, Hrvaška"
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Mnenja partnerjev",
+      "heading": "Kaj pravijo naši partnerji",
+      "items": {
+        "sarahMitchell": {
+          "quote": "Mavi je naš glavni veleprodajni partner že tri leta. Njihova kakovost izdelkov in zanesljivost sta v panogi brez primere.",
+          "name": "Sarah Mitchell",
+          "title": "Vodja nabave",
+          "company": "Sterling Developments Ltd."
+        },
+        "jamesChen": {
+          "quote": "Namensko vodenje ključnih strank in hitra izvedba naročil po meri sta za naše hotelske projekte z višjim standardom neprecenljiva.",
+          "name": "James Chen",
+          "title": "Glavni arhitekt",
+          "company": "Chen & Associates"
+        },
+        "mariaRodriguez": {
+          "quote": "Stalna kakovost, konkurenčne cene in katalog, ki pokrije vse naše potrebe. Prava veleprodajna rešitev na enem mestu.",
+          "name": "Maria Rodriguez",
+          "title": "Direktorica oblikovanja",
+          "company": "Luxe Interiors Group"
+        }
+      }
     }
   },
   "news": {
@@ -92,6 +196,54 @@
     "pageDescription": "Preglejte napovedi, projektne poudarke in produktne novosti Mavi.",
     "backHome": "Nazaj na domačo stran",
     "backToNews": "Nazaj na vse novice"
+  },
+  "footer": {
+    "tagline": "Vrhunska veleprodajna distribucija kopalniške opreme za strokovnjake, ki zahtevajo odličnost.",
+    "contactHeading": "Kontakt",
+    "businessHoursHeading": "Odpiralni čas",
+    "followUsHeading": "Spremljajte nas",
+    "email": "info@mavi.si",
+    "phone": "+1 (555) 234-5678",
+    "addressLine1": "123 Design District",
+    "addressLine2": "New York, NY 10001",
+    "hoursWeekday": "Ponedeljek – petek: 8.00 – 18.00",
+    "hoursSaturday": "Sobota: 9.00 – 14.00",
+    "hoursSunday": "Nedelja: zaprto",
+    "socialLinkedIn": "LinkedIn",
+    "socialInstagram": "Instagram",
+    "socialPinterest": "Pinterest",
+    "privacyPolicy": "Pravilnik o zasebnosti",
+    "termsOfService": "Pogoji uporabe",
+    "copyright": "© 2026 Mavi d.o.o.. Vse pravice pridržane."
+  },
+  "form": {
+    "contact": {
+      "nameLabel": "Ime",
+      "namePlaceholder": "Vaše ime",
+      "emailLabel": "E-pošta",
+      "emailPlaceholder": "vi@example.com",
+      "messageLabel": "Sporočilo",
+      "messagePlaceholder": "Predstavite nam vaš projekt...",
+      "submitIdle": "Pošlji sporočilo",
+      "submitSubmitting": "Pošiljanje...",
+      "toastTitle": "Sporočilo poslano",
+      "toastDescription": "V kratkem se vam oglasimo nazaj."
+    }
+  },
+  "validation": {
+    "contact": {
+      "nameRequired": "Ime je obvezno",
+      "emailRequired": "E-pošta je obvezna",
+      "emailInvalid": "Neveljaven e-poštni naslov",
+      "messageMin": "Sporočilo mora imeti vsaj 10 znakov"
+    }
+  },
+  "locale": {
+    "languageEnglish": "Angleščina",
+    "languageSlovenian": "Slovenščina",
+    "languageCroatian": "Hrvatski",
+    "ariaCurrentLanguage": "Jezik: {{language}}",
+    "ariaChangeLanguage": "Spremeni jezik"
   },
   "cta": {
     "getInTouch": "Stopite v stik",
@@ -104,7 +256,8 @@
     "description": "Obiščite eno izmed 9 poslovalnic po Sloveniji ali nas kontaktirajte neposredno.",
     "selectOffice": "Izberite poslovalnico",
     "mapHint": "Dvokliknite na zemljevid za vklop/izklop interakcije",
-    "mapUnavailable": "Zemljevid trenutno ni na voljo"
+    "mapUnavailable": "Zemljevid trenutno ni na voljo",
+    "mapLoading": "Zemljevid se nalaga…"
   },
   "common": {
     "returnHome": "Nazaj na domačo",

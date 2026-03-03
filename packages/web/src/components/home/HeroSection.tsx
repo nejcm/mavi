@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bathroom.jpg";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Luxury modern bathroom with freestanding bathtub and marble walls"
+          alt={t("home.hero.imageAlt")}
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -22,7 +26,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm tracking-[0.3em] uppercase text-primary-foreground/80 mb-6 font-body"
         >
-          Wholesale Bathroom Distribution
+          {t("home.hero.eyebrow")}
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +34,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight max-w-4xl mx-auto"
         >
-          Premium Bathroom Solutions. Delivered at Scale.
+          {t("home.hero.heading")}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +42,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto font-body font-light"
         >
-          Wholesale distribution for developers, designers, and retail partners.
+          {t("home.hero.subheading")}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,14 +55,14 @@ const HeroSection = () => {
             size="lg"
             className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
           >
-            Request Wholesale Catalog
+            {t("home.hero.primaryCta")}
           </Button>
           <Button
             variant="hero-outline"
             size="lg"
             className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
           >
-            Become a Partner
+            {t("home.hero.secondaryCta")}
           </Button>
         </motion.div>
       </div>

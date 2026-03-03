@@ -59,6 +59,7 @@ function OfficeMapContent({
   onDblClick,
   mapHint,
   mapUnavailable,
+  mapLoading,
 }: {
   selectedOffice: OfficeLocation | null;
   onMarkerClick: (office: OfficeLocation) => void;
@@ -66,6 +67,7 @@ function OfficeMapContent({
   onDblClick: () => void;
   mapHint: string;
   mapUnavailable: string;
+  mapLoading: string;
 }) {
   const status = useApiLoadingStatus();
 
@@ -80,7 +82,7 @@ function OfficeMapContent({
   if (status !== APILoadingStatus.LOADED) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm animate-pulse">
-        Loading map…
+        {mapLoading}
       </div>
     );
   }
@@ -238,6 +240,7 @@ const ContactSection = () => {
                     onDblClick={handleMapDblClick}
                     mapHint={t("contact.mapHint")}
                     mapUnavailable={t("contact.mapUnavailable")}
+                    mapLoading={t("contact.mapLoading")}
                   />
                 </APIProvider>
               ) : !hasApiKey ? (
@@ -246,7 +249,7 @@ const ContactSection = () => {
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm animate-pulse">
-                  Loading map…
+                  {t("contact.mapLoading")}
                 </div>
               )}
             </div>

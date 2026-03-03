@@ -1,40 +1,19 @@
 import { motion } from "framer-motion";
-import { DollarSign, Truck, ShieldCheck, Users, Globe, Settings } from "lucide-react";
+import { DollarSign, Globe, Settings, ShieldCheck, Truck, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const features = [
-  {
-    icon: DollarSign,
-    title: "Bulk Pricing",
-    desc: "Competitive wholesale rates with volume-based discounts for all partners.",
-  },
-  {
-    icon: Truck,
-    title: "Fast Delivery",
-    desc: "Reliable logistics with expedited shipping options across all regions.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality Control",
-    desc: "Every product passes rigorous inspection before leaving our warehouse.",
-  },
-  {
-    icon: Users,
-    title: "Account Managers",
-    desc: "Dedicated support to handle your orders, specifications, and timelines.",
-  },
-  {
-    icon: Globe,
-    title: "Global Sourcing",
-    desc: "Partnerships with leading manufacturers from Europe, Asia, and beyond.",
-  },
-  {
-    icon: Settings,
-    title: "Custom Orders",
-    desc: "Tailored solutions for unique project requirements and specifications.",
-  },
+  { icon: DollarSign, key: "bulkPricing" },
+  { icon: Truck, key: "fastDelivery" },
+  { icon: ShieldCheck, key: "qualityControl" },
+  { icon: Users, key: "accountManagers" },
+  { icon: Globe, key: "globalSourcing" },
+  { icon: Settings, key: "customOrders" },
 ];
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="why-us" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
@@ -46,15 +25,17 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 font-body">
-            Our Advantages
+            {t("home.why.eyebrow")}
           </p>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground">Why Choose Us</h2>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground">
+            {t("home.why.heading")}
+          </h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, i) => (
             <motion.div
-              key={f.title}
+              key={f.key}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -62,8 +43,12 @@ const WhyChooseUs = () => {
               className="p-8 rounded-lg border border-border hover:border-foreground/20 transition-colors duration-300"
             >
               <f.icon size={28} strokeWidth={1.5} className="text-foreground mb-5" />
-              <h3 className="font-display text-lg text-foreground mb-3">{f.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed font-body">{f.desc}</p>
+              <h3 className="font-display text-lg text-foreground mb-3">
+                {t(`home.why.features.${f.key}.title`)}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed font-body">
+                {t(`home.why.features.${f.key}.desc`)}
+              </p>
             </motion.div>
           ))}
         </div>
