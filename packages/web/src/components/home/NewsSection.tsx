@@ -57,7 +57,8 @@ const NewsSection = () => {
                 <p className="mt-3 text-sm text-muted-foreground font-body">{post.excerpt}</p>
 
                 <Link
-                  to={`/news/${post.slug}`}
+                  to="/news/$slug"
+                  params={{ slug: post.slug }}
                   className="mt-5 inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   {t("home.news.readMore")}

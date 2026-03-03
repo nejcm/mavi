@@ -4,12 +4,18 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const navLinks = [
+type NavLink = {
+  key: string;
+  href?: string;
+  to?: string;
+};
+
+const navLinks: NavLink[] = [
   { key: "about", href: "/#about" },
   { key: "products", href: "/#products" },
   { key: "whyUs", href: "/#why-us" },
   { key: "projects", href: "/#projects" },
-  { key: "news", to: "/#news" as const },
+  { key: "news", href: "/#news" },
   { key: "contact", href: "/#contact" },
 ];
 
@@ -47,7 +53,7 @@ const Header = ({ isDark }: HeaderProps) => {
             link.to ? (
               <Link
                 key={link.key}
-                to={link.to}
+                to={link.to as any}
                 className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
