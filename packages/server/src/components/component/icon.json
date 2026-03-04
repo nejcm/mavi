@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_icons",
+  "info": {
+    "displayName": "Icon",
+    "icon": "puzzle"
+  },
+  "options": {},
+  "attributes": {
+    "velikost": {
+      "type": "enumeration",
+      "enum": ["xs", "sm", "md", "lg", "xl", "xxl"]
+    },
+    "barva": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "ikona": {
+      "type": "string"
+    }
+  }
+}

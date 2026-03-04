@@ -1,6 +1,5 @@
 import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import ClassNames from "embla-carousel-class-names";
 import { useTranslation } from "react-i18next";
 
 import heroImage from "@/assets/hero-bathroom.jpg";
@@ -11,7 +10,6 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@/components/ui/carousel";
 
 type SliderItem = {
@@ -34,6 +32,8 @@ const sliderItems: SliderItem[] = [
   },
   {
     image: heroImage,
+    subheadingKey: "home.hero.subheading",
+    primaryCtaKey: "home.hero.primaryCta",
   },
   {
     image: heroImage,
@@ -41,37 +41,26 @@ const sliderItems: SliderItem[] = [
   },
 ];
 
+const plugins = [
+  Autoplay({
+    delay: 28_000,
+  }),
+  ClassNames(),
+];
+
+const opts = {
+  loop: true,
+};
+
 const HeroSection = () => {
   const { t } = useTranslation();
-  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
-
-  useEffect(() => {
-    if (!carouselApi) return;
-
-    const plugins = carouselApi.plugins() as unknown as {
-      autoplay?: { play: () => void };
-    };
-
-    plugins.autoplay?.play();
-  }, [carouselApi]);
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      <Carousel
-        className="absolute inset-0 z-10"
-        opts={{
-          loop: true,
-        }}
-        setApi={setCarouselApi}
-        plugins={[
-          Autoplay({
-            delay: 8_000,
-          }),
-        ]}
-      >
+      <Carousel className="absolute inset-0 z-10" opts={opts} plugins={plugins}>
         <CarouselContent className="h-full">
           {sliderItems.map((item, index) => (
-            <CarouselItem key={index} className="relative h-full">
+            <CarouselItem key={index} className="relative h-full px-0">
               <img
                 src={item.image}
                 alt={t("home.hero.imageAlt")}
@@ -79,45 +68,25 @@ const HeroSection = () => {
                 loading={index === 0 ? "eager" : "lazy"}
               />
               <div className="absolute inset-0 bg-foreground/30" />
-              <div className="absolute inset-0 z-10 flex items-center justify-center">
+              <div className="absolute inset-0 p-4 md:p-6 lg:p-8 z-10 flex items-center justify-center">
                 <div className="container mx-auto px-6 text-center">
                   {item.eyebrowKey && (
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                      className="text-sm tracking-[0.3em] uppercase text-primary-foreground/80 mb-6 font-body"
-                    >
+                    <p className="hero-animate-eyebrow text-sm tracking-[0.3em] uppercase text-primary-foreground/80 mb-6 font-body">
                       {t(item.eyebrowKey)}
-                    </motion.p>
+                    </p>
                   )}
                   {item.headingKey && (
-                    <motion.h1
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.4 }}
-                      className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight max-w-4xl mx-auto"
-                    >
+                    <h1 className="hero-animate-heading font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight max-w-4xl mx-auto">
                       {t(item.headingKey)}
-                    </motion.h1>
+                    </h1>
                   )}
                   {item.subheadingKey && (
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.7 }}
-                      className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto font-body font-light"
-                    >
+                    <p className="hero-animate-subheading mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto font-body font-light">
                       {t(item.subheadingKey)}
-                    </motion.p>
+                    </p>
                   )}
                   {(item.primaryCtaKey || item.secondaryCtaKey) && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 1 }}
-                      className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-                    >
+                    <div className="hero-animate-ctas mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                       {item.primaryCtaKey && (
                         <Button
                           variant="hero"
@@ -136,7 +105,7 @@ const HeroSection = () => {
                           {t(item.secondaryCtaKey)}
                         </Button>
                       )}
-                    </motion.div>
+                    </div>
                   )}
                 </div>
               </div>
@@ -146,14 +115,9 @@ const HeroSection = () => {
         <CarouselPrevious className="left-6 top-1/2 -translate-y-1/2 border-primary-foreground/40 bg-background/10 text-primary-foreground hover:bg-background/30" />
         <CarouselNext className="right-6 top-1/2 -translate-y-1/2 border-primary-foreground/40 bg-background/10 text-primary-foreground hover:bg-background/30" />
       </Carousel>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
+      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2">
         <div className="w-px h-16 bg-primary-foreground/40 animate-pulse" />
-      </motion.div>
+      </div>
     </section>
   );
 };

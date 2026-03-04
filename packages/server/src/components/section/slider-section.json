@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_slider_sections",
+  "info": {
+    "displayName": "Slider section",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tip": {
+      "type": "enumeration",
+      "enum": ["fullscreen", "grid"]
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.slide"
+    }
+  }
+}

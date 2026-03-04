@@ -78,6 +78,25 @@
         }
       }
     },
+    "highlights": {
+      "eyebrow": "Featured programs",
+      "heading": "Dornbracht, heat pumps & ViSoft",
+      "subheading": "Signature brands and services that bring more comfort, efficiency, and individuality to your bathroom projects.",
+      "items": {
+        "dornbracht": {
+          "title": "Dornbracht – Culture of Living",
+          "body": "More comfort, more performance, more individuality. Dornbracht elevates bathroom and kitchen spaces into refined living environments."
+        },
+        "heatPumps": {
+          "title": "Heat pumps",
+          "body": "For highly efficient and economical space heating and domestic hot water preparation."
+        },
+        "visoft": {
+          "title": "ViSoft Premium 2018",
+          "body": "With the ViSoft program and 3D graphics, we design and visualise your future bathroom based on room measurements and selected bathroom equipment."
+        }
+      }
+    },
     "news": {
       "eyebrow": "Latest updates",
       "heading": "News & Insights",

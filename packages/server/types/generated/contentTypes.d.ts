@@ -435,7 +435,16 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      [
+        "section.cta",
+        "section.horizontal-section",
+        "section.vertical-section",
+        "section.grid-section",
+        "section.news",
+        "section.locations",
+        "section.slider-section",
+        "section.careers",
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
@@ -473,6 +482,54 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSectionSection extends Struct.CollectionTypeSchema {
+  collectionName: "sections";
+  info: {
+    description: "Reusable page section entries";
+    displayName: "Section";
+    pluralName: "sections";
+    singularName: "section";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::section.section"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tip: Schema.Attribute.Enumeration<
+      [
+        "cta",
+        "horizontal-section",
+        "vertical-section",
+        "grid-section",
+        "news",
+        "locations",
+        "slider-section",
+        "careers",
+      ]
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    vsebina: Schema.Attribute.DynamicZone<
+      [
+        "section.cta",
+        "section.horizontal-section",
+        "section.vertical-section",
+        "section.grid-section",
+        "section.news",
+        "section.locations",
+        "section.slider-section",
+        "section.careers",
+      ]
+    >;
   };
 }
 
@@ -908,6 +965,7 @@ declare module "@strapi/strapi" {
       "admin::user": AdminUser;
       "api::about.about": ApiAboutAbout;
       "api::global.global": ApiGlobalGlobal;
+      "api::section.section": ApiSectionSection;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
       "plugin::i18n.locale": PluginI18NLocale;

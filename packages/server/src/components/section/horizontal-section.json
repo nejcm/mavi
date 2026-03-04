@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_horizontal_sections",
+  "info": {
+    "displayName": "Horizontal section",
+    "icon": "puzzle"
+  },
+  "options": {},
+  "attributes": {
+    "naslov": {
+      "type": "string",
+      "required": false
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "gumb": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.button"
+    },
+    "medij": {
+      "allowedTypes": ["images", "videos"],
+      "type": "media",
+      "multiple": false
+    },
+    "obratno": {
+      "type": "boolean"
+    }
+  }
+}

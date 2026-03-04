@@ -78,6 +78,25 @@
         }
       }
     },
+    "highlights": {
+      "eyebrow": "Izpostavljeno",
+      "heading": "Dornbracht, toplotne črpalke in ViSoft",
+      "subheading": "Programi in rešitve, ki prinašajo več udobja, učinkovitosti in individualnosti v vaše projekte.",
+      "items": {
+        "dornbracht": {
+          "title": "Dornbracht – kultura življenja",
+          "body": "Več udobja, več izkoristka, več individualnosti. Dornbracht kultivira habitate kopalnic in kuhinj."
+        },
+        "heatPumps": {
+          "title": "Toplotne črpalke",
+          "body": "Za učinkovito ter varčno ogrevanje prostorov in pripravo tople sanitarne vode."
+        },
+        "visoft": {
+          "title": "ViSoft Premium 2018",
+          "body": "S pomočjo programa ViSoft in 3D grafike vam po vaših izmerah prostora in glede na izbrano kopalniško opremo narišemo in predstavimo izgled vaše bodoče kopalnice."
+        }
+      }
+    },
     "news": {
       "eyebrow": "Zadnje novice",
       "heading": "Novice in vpogledi",

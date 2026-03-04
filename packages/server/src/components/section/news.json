@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_news",
+  "info": {
+    "displayName": "News",
+    "icon": "puzzle"
+  },
+  "options": {},
+  "attributes": {
+    "naslov": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "limit": {
+      "type": "integer",
+      "required": false
+    }
+  }
+}

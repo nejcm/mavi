@@ -54,7 +54,7 @@ const Header = ({ isDark }: HeaderProps) => {
               <Link
                 key={link.key}
                 to={link.to as any}
-                className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
+                className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
               </Link>
@@ -62,7 +62,7 @@ const Header = ({ isDark }: HeaderProps) => {
               <a
                 key={link.key}
                 href={link.href}
-                className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
+                className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
               </a>
@@ -96,7 +96,7 @@ const Header = ({ isDark }: HeaderProps) => {
                   key={link.key}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
+                  className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
                 >
                   {t(`nav.${link.key}`)}
                 </Link>
@@ -105,7 +105,7 @@ const Header = ({ isDark }: HeaderProps) => {
                   key={link.key}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
+                  className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
                 >
                   {t(`nav.${link.key}`)}
                 </a>

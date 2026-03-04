@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "Section",
+    "description": "Reusable page section entries"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tip": {
+      "type": "enumeration",
+      "enum": [
+        "cta",
+        "horizontal-section",
+        "vertical-section",
+        "grid-section",
+        "news",
+        "locations",
+        "slider-section",
+        "careers"
+      ]
+    },
+    "vsebina": {
+      "type": "dynamiczone",
+      "components": [
+        "section.cta",
+        "section.horizontal-section",
+        "section.vertical-section",
+        "section.grid-section",
+        "section.news",
+        "section.locations",
+        "section.slider-section",
+        "section.careers"
+      ]
+    }
+  }
+}

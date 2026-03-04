@@ -17,7 +17,16 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "section.cta",
+        "section.horizontal-section",
+        "section.vertical-section",
+        "section.grid-section",
+        "section.news",
+        "section.locations",
+        "section.slider-section",
+        "section.careers"
+      ]
     }
   }
 }

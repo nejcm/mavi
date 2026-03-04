@@ -8,8 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAppStore } from "@/stores/app-store";
 import { type Locale } from "@/i18n";
+import { useAppStore } from "@/stores/app-store";
 
 export interface LocaleSwitcherProps {
   scrolled: boolean;
@@ -17,9 +17,21 @@ export interface LocaleSwitcherProps {
 }
 
 const locales: { value: Locale; labelKey: string; flagSrc: string }[] = [
-  { value: "en", labelKey: "locale.languageEnglish", flagSrc: "/images/flags/gb.svg" },
-  { value: "sl", labelKey: "locale.languageSlovenian", flagSrc: "/images/flags/si.svg" },
-  { value: "hr", labelKey: "locale.languageCroatian", flagSrc: "/images/flags/hr.svg" },
+  {
+    value: "en",
+    labelKey: "locale.languageEnglish",
+    flagSrc: "/images/flags/gb.svg",
+  },
+  {
+    value: "sl",
+    labelKey: "locale.languageSlovenian",
+    flagSrc: "/images/flags/si.svg",
+  },
+  {
+    value: "hr",
+    labelKey: "locale.languageCroatian",
+    flagSrc: "/images/flags/hr.svg",
+  },
 ];
 
 export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
@@ -41,7 +53,7 @@ export function LocaleSwitcher({ scrolled, isDark }: LocaleSwitcherProps) {
         <Button
           variant="unstyled"
           size="icon"
-          className={`${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} text-inherit`}
+          className={`${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} text-inherit`}
           aria-label={
             currentLocale
               ? t("locale.ariaCurrentLanguage", { language: currentLabel })

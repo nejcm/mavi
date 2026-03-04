@@ -111,6 +111,37 @@
   }
 }
 
+@layer components {
+  .hero-animate-eyebrow,
+  .hero-animate-heading,
+  .hero-animate-subheading,
+  .hero-animate-ctas {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .is-in-view .hero-animate-eyebrow {
+    animation: fade-up 0.6s ease-out forwards;
+    animation-delay: 0.1s;
+  }
+  .is-in-view .hero-animate-heading {
+    animation: fade-up 0.8s ease-out forwards;
+    animation-delay: 0.25s;
+  }
+  .is-in-view .hero-animate-subheading {
+    animation: fade-up 0.6s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  .is-in-view .hero-animate-ctas {
+    animation: fade-up 0.6s ease-out forwards;
+    animation-delay: 0.75s;
+  }
+  .hero-scroll-indicator {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

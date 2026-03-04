@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_ctas",
+  "info": {
+    "displayName": "CTA",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "naslov": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "slika": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gumb": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.button"
+    }
+  }
+}

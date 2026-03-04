@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_component_slides",
+  "info": {
+    "displayName": "Slide",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "medij": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "gumb": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.button"
+    },
+    "pozicija": {
+      "type": "enumeration",
+      "enum": [
+        "top-left",
+        "left",
+        "bottom-left",
+        "center",
+        "top-right",
+        "right",
+        "bottom-right"
+      ],
+      "default": "center"
+    }
+  }
+}
