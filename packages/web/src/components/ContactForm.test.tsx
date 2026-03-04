@@ -16,6 +16,22 @@ vi.mock("@/hooks/use-toast", () => ({
   }),
 }));
 
+vi.mock("react-i18next", () => ({
+  useTranslation: () => ({
+    t: (key: string) => {
+      const translations: Record<string, string> = {
+        "form.contact.nameLabel": "Name",
+        "form.contact.emailLabel": "Email",
+        "form.contact.messageLabel": "Message",
+        "form.contact.submitIdle": "Send message",
+        "form.contact.submitSubmitting": "Sending...",
+      };
+
+      return translations[key] ?? key;
+    },
+  }),
+}));
+
 describe("ContactForm", () => {
   it("renders form fields and submit button", () => {
     render(<ContactForm />, { wrapper });
