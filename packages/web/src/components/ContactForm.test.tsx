@@ -1,12 +1,12 @@
-import { describe, it, expect, vi } from "vitest";
+import { ContactForm } from "@/components/ContactForm";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ContactForm } from "@/components/ContactForm";
+import { describe, expect, it, vi } from "vitest";
 
 const queryClient = new QueryClient();
 
-function wrapper({ children }: { children: React.ReactNode }) {
+function wrapper({ children }: { children: any }) {
   return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 }
 

@@ -22,11 +22,19 @@
     "**/dist-ssr/**",
     "**/coverage/**",
     "**/.vite/**",
-    "**/*.gen.ts"
+    "**/*.gen.ts",
+    "**/generated/**",
+    "**/.strapi/**",
+    "**/.agents/**"
   ],
   "overrides": [
     {
-      "files": ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/test/**", "**/e2e/**"],
+      "files": [
+        "**/*.test.{ts,tsx}",
+        "**/*.spec.{ts,tsx}",
+        "**/test/**",
+        "**/e2e/**"
+      ],
       "plugins": ["eslint", "typescript", "unicorn", "oxc", "react", "vitest"],
       "rules": {
         "vitest/no-disabled-tests": "off"
