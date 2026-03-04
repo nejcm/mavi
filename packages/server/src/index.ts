@@ -1,19 +1,20 @@
-const server = Bun.serve({
-  port: process.env.PORT ?? 3001,
-  fetch(req) {
-    const url = new URL(req.url);
-    if (url.pathname === "/") {
-      return new Response(JSON.stringify({ message: "Mavi API", status: "ok" }), {
-        headers: { "Content-Type": "application/json" },
-      });
-    }
-    if (url.pathname === "/health") {
-      return new Response(JSON.stringify({ ok: true }), {
-        headers: { "Content-Type": "application/json" },
-      });
-    }
-    return new Response("Not Found", { status: 404 });
-  },
-});
+// import type { Core } from '@strapi/strapi';
 
-console.log(`Server running at http://localhost:${server.port}`);
+export default {
+  /**
+   * An asynchronous register function that runs before
+   * your application is initialized.
+   *
+   * This gives you an opportunity to extend code.
+   */
+  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+
+  /**
+   * An asynchronous bootstrap function that runs before
+   * your application gets started.
+   *
+   * This gives you an opportunity to set up your data model,
+   * run jobs, or perform some special logic.
+   */
+  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+};

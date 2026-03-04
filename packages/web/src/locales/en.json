@@ -12,20 +12,238 @@
       "eyebrow": "Trusted by teams",
       "heading": "Preferred by architects and contractors"
     },
+    "productCategories": {
+      "eyebrow": "Sales program",
+      "heading": "Sales Categories",
+      "subheading": "Comprehensive offering for plumbing installations, sanitary equipment, heating, ceramic tiles, and ventilation.",
+      "categories": {
+        "waterworks": {
+          "title": "Waterworks",
+          "items": {
+            "installationMaterial": "Installation materials",
+            "insulation": "Insulation",
+            "valves": "Valves",
+            "siphons": "Siphons",
+            "filters": "Filters"
+          }
+        },
+        "sanitaryEquipment": {
+          "title": "Sanitary Equipment",
+          "items": {
+            "sanitaryCeramics": "Sanitary ceramics",
+            "sanitaryFaucets": "Sanitary faucets",
+            "bathtubsAndShowerTrays": "Bathtubs and shower trays",
+            "showerCabinsAndScreens": "Shower cabins and screens",
+            "massageSystems": "Massage systems",
+            "bathroomFurniture": "Bathroom furniture",
+            "bathroomAccessories": "Bathroom accessories"
+          }
+        },
+        "heating": {
+          "title": "Heating",
+          "items": {
+            "heatingBoilers": "Heating boilers",
+            "electricFurnaces": "Electric furnaces",
+            "burners": "Burners",
+            "heatPumps": "Heat pumps",
+            "fireplaces": "Fireplaces",
+            "controls": "Controls",
+            "classicRadiators": "Classic radiators",
+            "bathroomRadiators": "Bathroom radiators",
+            "electricRadiators": "Electric radiators",
+            "floorHeating": "Underfloor heating",
+            "waterHeaters": "Water heaters",
+            "oilTanks": "Oil tanks",
+            "pumpsAndMixingValves": "Pumps and mixing valves",
+            "chimneySystems": "Chimney systems",
+            "solarSystems": "Solar systems",
+            "radiatorValvesAndManifolds": "Radiator valves and manifolds",
+            "insulation": "Insulation"
+          }
+        },
+        "ceramicTiles": {
+          "title": "Ceramic Tiles",
+          "items": {
+            "ceramicTiles": "Ceramic tiles",
+            "adhesivesGroutsAndSilicones": "Adhesives, grouts, and silicone sealants",
+            "trims": "Trims"
+          }
+        },
+        "ventilation": {
+          "title": "Ventilation",
+          "items": {
+            "airConditioningUnits": "Air conditioning units",
+            "ventilationDevices": "Ventilation devices"
+          }
+        }
+      }
+    },
     "news": {
       "eyebrow": "Latest updates",
       "heading": "News & Insights",
-      "subheading": "Recent updates from AquaHaus, including product announcements, partner highlights, and project milestones.",
+      "subheading": "Recent updates from Mavi, including product announcements, partner highlights, and project milestones.",
       "viewAll": "View all news",
       "readMore": "Read more"
+    },
+    "hero": {
+      "eyebrow": "Wholesale Bathroom Distribution",
+      "heading": "Premium Bathroom Solutions. Delivered at Scale.",
+      "subheading": "Wholesale distribution for developers, designers, and retail partners.",
+      "primaryCta": "Request Wholesale Catalog",
+      "secondaryCta": "Become a Partner",
+      "imageAlt": "Luxury modern bathroom with freestanding bathtub and marble walls"
+    },
+    "about": {
+      "eyebrow": "About Us",
+      "heading": "Trusted Source for Premium Bathroom Products",
+      "body1": "For over a decade, Mavi has been the trusted wholesale partner for architects, designers, and developers seeking premium bathroom solutions. We source the finest fixtures and fittings from world-renowned manufacturers.",
+      "body2": "Our commitment to quality extends beyond products — with dedicated account managers, reliable logistics, and one of the largest inventories in the industry, we ensure your projects are delivered on time and to specification.",
+      "body3": "From boutique residential developments to large-scale hospitality projects, our team provides tailored solutions that meet the highest standards of design and functionality.",
+      "stats": {
+        "products": "Products",
+        "partners": "Business Partners",
+        "experience": "Years Experience"
+      }
+    },
+    "why": {
+      "eyebrow": "Our Advantages",
+      "heading": "Why Choose Us",
+      "features": {
+        "bulkPricing": {
+          "title": "Bulk Pricing",
+          "desc": "Competitive wholesale rates with volume-based discounts for all partners."
+        },
+        "fastDelivery": {
+          "title": "Fast Delivery",
+          "desc": "Reliable logistics with expedited shipping options across all regions."
+        },
+        "qualityControl": {
+          "title": "Quality Control",
+          "desc": "Every product passes rigorous inspection before leaving our warehouse."
+        },
+        "accountManagers": {
+          "title": "Account Managers",
+          "desc": "Dedicated support to handle your orders, specifications, and timelines."
+        },
+        "globalSourcing": {
+          "title": "Global Sourcing",
+          "desc": "Partnerships with leading manufacturers from Europe, Asia, and beyond."
+        },
+        "customOrders": {
+          "title": "Custom Orders",
+          "desc": "Tailored solutions for unique project requirements and specifications."
+        }
+      }
+    },
+    "projects": {
+      "eyebrow": "Portfolio",
+      "heading": "Featured Projects",
+      "items": {
+        "luxuryHotel": {
+          "title": "Luxury Hotel Project",
+          "location": "Dubai, UAE"
+        },
+        "residentialDevelopment": {
+          "title": "Residential Development",
+          "location": "London, UK"
+        },
+        "wellnessSpa": {
+          "title": "Wellness Spa Resort",
+          "location": "Bali, Indonesia"
+        },
+        "officeTower": {
+          "title": "Commercial Office Tower",
+          "location": "New York, USA"
+        },
+        "retailCenter": {
+          "title": "Boutique Retail Center",
+          "location": "Milan, Italy"
+        },
+        "coastalVilla": {
+          "title": "Coastal Villa Renovation",
+          "location": "Split, Croatia"
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "heading": "What Our Partners Say",
+      "items": {
+        "sarahMitchell": {
+          "quote": "Mavi has been our go-to wholesale partner for three years. Their product quality and reliability are unmatched in the industry.",
+          "name": "Sarah Mitchell",
+          "title": "Head of Procurement",
+          "company": "Sterling Developments Ltd."
+        },
+        "jamesChen": {
+          "quote": "The dedicated account management and fast turnaround on custom orders make them invaluable for our high-end hospitality projects.",
+          "name": "James Chen",
+          "title": "Principal Architect",
+          "company": "Chen & Associates"
+        },
+        "mariaRodriguez": {
+          "quote": "Consistent quality, competitive pricing, and a catalog that covers everything we need. A true one-stop wholesale solution.",
+          "name": "Maria Rodriguez",
+          "title": "Design Director",
+          "company": "Luxe Interiors Group"
+        }
+      }
     }
   },
   "news": {
     "eyebrow": "Newsroom",
     "pageTitle": "Latest News",
-    "pageDescription": "Explore announcements, project highlights, and product updates from AquaHaus.",
+    "pageDescription": "Explore announcements, project highlights, and product updates from Mavi.",
     "backHome": "Back to home",
     "backToNews": "Back to all news"
+  },
+  "footer": {
+    "tagline": "Premium wholesale bathroom distribution for professionals who demand excellence.",
+    "contactHeading": "Contact",
+    "businessHoursHeading": "Business Hours",
+    "followUsHeading": "Follow Us",
+    "email": "info@mavi.si",
+    "phone": "+1 (555) 234-5678",
+    "addressLine1": "123 Design District",
+    "addressLine2": "New York, NY 10001",
+    "hoursWeekday": "Monday – Friday: 8am – 6pm",
+    "hoursSaturday": "Saturday: 9am – 2pm",
+    "hoursSunday": "Sunday: Closed",
+    "socialLinkedIn": "LinkedIn",
+    "socialInstagram": "Instagram",
+    "socialPinterest": "Pinterest",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© 2026 Mavi d.o.o.. All rights reserved."
+  },
+  "form": {
+    "contact": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submitIdle": "Send message",
+      "submitSubmitting": "Sending...",
+      "toastTitle": "Message sent",
+      "toastDescription": "We'll get back to you soon."
+    }
+  },
+  "validation": {
+    "contact": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email",
+      "messageMin": "Message must be at least 10 characters"
+    }
+  },
+  "locale": {
+    "languageEnglish": "English",
+    "languageSlovenian": "Slovenian",
+    "languageCroatian": "Croatian",
+    "ariaCurrentLanguage": "Language: {{language}}",
+    "ariaChangeLanguage": "Change language"
   },
   "cta": {
     "getInTouch": "Get in Touch",
@@ -38,7 +256,8 @@
     "description": "Visit one of our 9 showrooms across Slovenia or get in touch with our team directly.",
     "selectOffice": "Select an office",
     "mapHint": "Double-click the map to enable/disable interaction",
-    "mapUnavailable": "Map is currently unavailable"
+    "mapUnavailable": "Map is currently unavailable",
+    "mapLoading": "Loading map…"
   },
   "common": {
     "returnHome": "Return to Home",

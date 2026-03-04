@@ -1,58 +1,60 @@
+import { useTranslation } from "react-i18next";
+
 import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-foreground text-primary-foreground py-16">
       <div className="container mx-auto px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="font-display text-xl mb-4">
-              AQUA<span className="font-light">HAUS</span>
-            </h3>
+            <h3 className="font-display text-xl mb-4">MAVI</h3>
             <p className="text-sm text-primary-foreground/60 font-body leading-relaxed">
-              Premium wholesale bathroom distribution for professionals who demand excellence.
+              {t("footer.tagline")}
             </p>
           </div>
 
           <div>
             <h4 className="text-sm tracking-wider uppercase mb-4 font-body font-semibold">
-              Contact
+              {t("footer.contactHeading")}
             </h4>
             <div className="space-y-2 text-sm text-primary-foreground/60 font-body">
-              <p>info@aquahaus.com</p>
-              <p>+1 (555) 234-5678</p>
+              <p>{t("footer.email")}</p>
+              <p>{t("footer.phone")}</p>
               <p>
-                123 Design District
+                {t("footer.addressLine1")}
                 <br />
-                New York, NY 10001
+                {t("footer.addressLine2")}
               </p>
             </div>
           </div>
 
           <div>
             <h4 className="text-sm tracking-wider uppercase mb-4 font-body font-semibold">
-              Business Hours
+              {t("footer.businessHoursHeading")}
             </h4>
             <div className="space-y-2 text-sm text-primary-foreground/60 font-body">
-              <p>Monday – Friday: 8am – 6pm</p>
-              <p>Saturday: 9am – 2pm</p>
-              <p>Sunday: Closed</p>
+              <p>{t("footer.hoursWeekday")}</p>
+              <p>{t("footer.hoursSaturday")}</p>
+              <p>{t("footer.hoursSunday")}</p>
             </div>
           </div>
 
           <div>
             <h4 className="text-sm tracking-wider uppercase mb-4 font-body font-semibold">
-              Follow Us
+              {t("footer.followUsHeading")}
             </h4>
             <div className="space-y-2 text-sm text-primary-foreground/60 font-body">
               <a href="#" className="block hover:text-primary-foreground transition-colors">
-                LinkedIn
+                {t("footer.socialLinkedIn")}
               </a>
               <a href="#" className="block hover:text-primary-foreground transition-colors">
-                Instagram
+                {t("footer.socialInstagram")}
               </a>
               <a href="#" className="block hover:text-primary-foreground transition-colors">
-                Pinterest
+                {t("footer.socialPinterest")}
               </a>
             </div>
           </div>
@@ -61,13 +63,13 @@ const Footer = () => {
         <Separator className="bg-primary-foreground/10 mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/40 font-body">
-          <p>© 2026 AquaHaus. All rights reserved.</p>
+          <p>{t("footer.copyright")}</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary-foreground/70 transition-colors">
-              Privacy Policy
+              {t("footer.privacyPolicy")}
             </a>
             <a href="#" className="hover:text-primary-foreground/70 transition-colors">
-              Terms of Service
+              {t("footer.termsOfService")}
             </a>
           </div>
         </div>

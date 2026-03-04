@@ -1,17 +1,49 @@
 {
   "name": "@mavi/server",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
+  "description": "A Mavi Strapi application",
   "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "start": "bun run src/index.ts",
-    "build": "tsc",
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "lint": "oxlint --deny-warnings .",
     "lint:ts": "tsc --noEmit",
-    "test": "echo 'Noop'"
+    "format": "oxfmt .",
+    "test": "echo 'No tests'",
+    "test:e2e": "echo 'No E2E tests'",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.37.1",
+    "@strapi/plugin-color-picker": "~5.37.1",
+    "@strapi/plugin-users-permissions": "5.37.1",
+    "@strapi/strapi": "5.37.1",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
+    "mysql2": "3.9.8",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "typescript": "^5.8.3"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "5f092bf5-fba5-48fe-b7f1-4afaa6347b68",
+    "installId": "55de4a4894144ec8e2bb5ff435e591c9e1c0635e357c4c0469d2dd44912172d4"
   }
 }

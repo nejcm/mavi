@@ -20,12 +20,12 @@ export interface NewsPost {
 const posts: NewsPost[] = [
   {
     id: "news-01",
-    slug: "aquahaus-expands-warehouse-capacity",
-    title: "AquaHaus expands warehouse capacity for faster regional delivery",
+    slug: "mavi-expands-warehouse-capacity",
+    title: "Mavi expands warehouse capacity for faster regional delivery",
     excerpt:
       "We completed a warehouse expansion focused on faster lead times and more stable inventory for our partner showrooms.",
     content: [
-      "AquaHaus has finalized an expansion of its regional warehouse operations to support growing demand from partner showrooms and installers.",
+      "Mavi has finalized an expansion of its regional warehouse operations to support growing demand from partner showrooms and installers.",
       "The expansion adds new storage zones for high-turnover bathroom fittings and improves internal picking workflows. This allows our logistics team to ship recurring orders with shorter processing windows.",
       "In practice, partners can expect better product availability, reduced stock gaps for core lines, and more predictable delivery schedules across key markets.",
     ],
@@ -54,7 +54,7 @@ const posts: NewsPost[] = [
   {
     id: "news-03",
     slug: "design-partner-program-launch",
-    title: "AquaHaus launches design partner program",
+    title: "Mavi launches design partner program",
     excerpt:
       "Architects and interior studios can now join our new partner framework with technical consulting and project support.",
     content: [
@@ -88,9 +88,9 @@ const posts: NewsPost[] = [
     slug: "case-study-urban-hotel-renovation",
     title: "Case study: Urban hotel renovation delivered on schedule",
     excerpt:
-      "A recent hospitality renovation used AquaHaus systems across 180 rooms, balancing timeline pressure and quality requirements.",
+      "A recent hospitality renovation used Mavi systems across 180 rooms, balancing timeline pressure and quality requirements.",
     content: [
-      "A multi-phase hotel renovation project in Central Europe reached completion on schedule, with AquaHaus products integrated across guest bathrooms and wellness areas.",
+      "A multi-phase hotel renovation project in Central Europe reached completion on schedule, with Mavi products integrated across guest bathrooms and wellness areas.",
       "The project team prioritized consistent finish quality, straightforward maintenance, and coordinated deliveries across staggered installation phases.",
       "Detailed outcomes from the project will be published in an extended technical case study this quarter.",
     ],

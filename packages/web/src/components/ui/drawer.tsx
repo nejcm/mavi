@@ -13,7 +13,8 @@ Drawer.displayName = "Drawer";
 
 const DrawerTrigger = DrawerPrimitive.Trigger;
 
-const DrawerPortal = DrawerPrimitive.Portal;
+const DrawerPortal = ({ children }: { children?: React.ReactNode }) =>
+  React.createElement(DrawerPrimitive.Portal as any, null, children);
 
 const DrawerClose = DrawerPrimitive.Close;
 

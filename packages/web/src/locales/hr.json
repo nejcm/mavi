@@ -1,0 +1,266 @@
+{
+  "nav": {
+    "about": "O nama",
+    "products": "Proizvodi",
+    "whyUs": "Zašto mi",
+    "projects": "Projekti",
+    "news": "Novosti",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "logos": {
+      "eyebrow": "Timovi nam vjeruju",
+      "heading": "Izbor arhitekata i izvođača"
+    },
+    "productCategories": {
+      "eyebrow": "Prodajni program",
+      "heading": "Prodajne kategorije",
+      "subheading": "Sveobuhvatna ponuda za vodovodne instalacije, sanitarnu opremu, grijanje, keramičke pločice i ventilaciju.",
+      "categories": {
+        "waterworks": {
+          "title": "Vodovod",
+          "items": {
+            "installationMaterial": "Instalacijski materijal",
+            "insulation": "Izolacija",
+            "valves": "Ventili",
+            "siphons": "Sifoni",
+            "filters": "Filteri"
+          }
+        },
+        "sanitaryEquipment": {
+          "title": "Sanitarna oprema",
+          "items": {
+            "sanitaryCeramics": "Sanitarna keramika",
+            "sanitaryFaucets": "Sanitarne armature",
+            "bathtubsAndShowerTrays": "Kade i tuš kade",
+            "showerCabinsAndScreens": "Tuš kabine i paravani",
+            "massageSystems": "Masažni sustavi",
+            "bathroomFurniture": "Kupaonski namještaj",
+            "bathroomAccessories": "Kupaonski dodaci"
+          }
+        },
+        "heating": {
+          "title": "Grijanje",
+          "items": {
+            "heatingBoilers": "Kotlovi za grijanje",
+            "electricFurnaces": "Električne peći",
+            "burners": "Gorionici",
+            "heatPumps": "Toplinske pumpe",
+            "fireplaces": "Kamini",
+            "controls": "Regulacija",
+            "classicRadiators": "Radijatori – klasični",
+            "bathroomRadiators": "Radijatori – kupaonski",
+            "electricRadiators": "Radijatori – električni",
+            "floorHeating": "Podno grijanje",
+            "waterHeaters": "Grijači vode",
+            "oilTanks": "Spremnici za ulje",
+            "pumpsAndMixingValves": "Pumpe i miješajući ventili",
+            "chimneySystems": "Dimni sustavi",
+            "solarSystems": "Solarni sustavi",
+            "radiatorValvesAndManifolds": "Radijatorski ventili i razdjelnici",
+            "insulation": "Izolacija"
+          }
+        },
+        "ceramicTiles": {
+          "title": "Keramičke pločice",
+          "items": {
+            "ceramicTiles": "Keramičke pločice",
+            "adhesivesGroutsAndSilicones": "Lijepila, fuge i silikonski kitovi",
+            "trims": "Lajsne"
+          }
+        },
+        "ventilation": {
+          "title": "Ventilacija",
+          "items": {
+            "airConditioningUnits": "Klimatizacijski uređaji",
+            "ventilationDevices": "Ventilacijski uređaji"
+          }
+        }
+      }
+    },
+    "news": {
+      "eyebrow": "Najnovije novosti",
+      "heading": "Novosti i uvidi",
+      "subheading": "Najnovije objave Mavija: najave proizvoda, partnerstva i ključni projektni trenuci.",
+      "viewAll": "Sve novosti",
+      "readMore": "Pročitaj više"
+    },
+    "hero": {
+      "eyebrow": "Veleprodaja kupaonske opreme",
+      "heading": "Vrhunska kupaonska rješenja. Isporučena u velikim količinama.",
+      "subheading": "Veleprodajna distribucija za investitore, projektante i prodajne partnere.",
+      "primaryCta": "Zatraži veleprodajni katalog",
+      "secondaryCta": "Postanite partner",
+      "imageAlt": "Moderna luksuzna kupaonica sa samostojećom kadom i zidovima obloženim mramorom"
+    },
+    "about": {
+      "eyebrow": "O nama",
+      "heading": "Pouzdan izvor vrhunske kupaonske opreme",
+      "body1": "Već više od desetljeća Mavi je pouzdan veleprodajni partner arhitekata, projektanata i investitora koji traže vrhunska kupaonska rješenja. Suradujemo s renomiranim proizvođačima i pažljivo biramo opremu.",
+      "body2": "Naša predanost kvaliteti nadilazi same proizvode – s osobnim voditeljem klijenata, pouzdanom logistikom i jednom od najvećih zaliha u industriji osiguravamo da se projekti izvedu na vrijeme i u skladu s dogovorenom specifikacijom.",
+      "body3": "Od butiknih stambenih objekata do velikih hotelskih kompleksa, naš tim pruža prilagođena rješenja koja zadovoljavaju najviše standarde dizajna i funkcionalnosti.",
+      "stats": {
+        "products": "Proizvoda",
+        "partners": "Poslovnih partnera",
+        "experience": "Godina iskustva"
+      }
+    },
+    "why": {
+      "eyebrow": "Naše prednosti",
+      "heading": "Zašto odabrati nas",
+      "features": {
+        "bulkPricing": {
+          "title": "Veleprodajne cijene",
+          "desc": "Konkurentne veleprodajne cijene s količinskim popustima za sve partnere."
+        },
+        "fastDelivery": {
+          "title": "Brza isporuka",
+          "desc": "Pouzdana logistika s ubrzanom isporukom u cijeloj regiji."
+        },
+        "qualityControl": {
+          "title": "Kontrola kvalitete",
+          "desc": "Svaki proizvod je temeljito pregledan prije nego što napusti naše skladište."
+        },
+        "accountManagers": {
+          "title": "Osobni voditelji klijenata",
+          "desc": "Namjenska podrška za narudžbe, specifikacije i rokove projekata."
+        },
+        "globalSourcing": {
+          "title": "Globalno nabavljanje",
+          "desc": "Partnerstva s vodećim proizvođačima iz Europe, Azije i drugih regija."
+        },
+        "customOrders": {
+          "title": "Rješenja po mjeri",
+          "desc": "Prilagođena rješenja za posebne zahtjeve i projekte."
+        }
+      }
+    },
+    "projects": {
+      "eyebrow": "Referentni projekti",
+      "heading": "Istaknuti projekti",
+      "items": {
+        "luxuryHotel": {
+          "title": "Projekt luksuznog hotela",
+          "location": "Dubai, Ujedinjeni Arapski Emirati"
+        },
+        "residentialDevelopment": {
+          "title": "Stambeni kompleks",
+          "location": "London, Ujedinjeno Kraljevstvo"
+        },
+        "wellnessSpa": {
+          "title": "Wellness i SPA resort",
+          "location": "Bali, Indonezija"
+        },
+        "officeTower": {
+          "title": "Poslovni toranj",
+          "location": "New York, SAD"
+        },
+        "retailCenter": {
+          "title": "Butik trgovački centar",
+          "location": "Milano, Italija"
+        },
+        "coastalVilla": {
+          "title": "Obalna vila – obnova",
+          "location": "Split, Hrvatska"
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Iskustva partnera",
+      "heading": "Što kažu naši partneri",
+      "items": {
+        "sarahMitchell": {
+          "quote": "Mavi je naš glavni veleprodajni partner već tri godine. Njihova kvaliteta proizvoda i pouzdanost su bez premca u industriji.",
+          "name": "Sarah Mitchell",
+          "title": "Voditelj nabave",
+          "company": "Sterling Developments Ltd."
+        },
+        "jamesChen": {
+          "quote": "Posvećeno vođenje ključnih klijenata i brza realizacija narudžbi po mjeri za naše hotelske projekte višeg standarda neprocjenjivi su.",
+          "name": "James Chen",
+          "title": "Glavni arhitekt",
+          "company": "Chen & Associates"
+        },
+        "mariaRodriguez": {
+          "quote": "Stalna kvaliteta, konkurentne cijene i katalog koji pokriva sve naše potrebe. Pravo veleprodajno rješenje na jednom mjestu.",
+          "name": "Maria Rodriguez",
+          "title": "Direktorica dizajna",
+          "company": "Luxe Interiors Group"
+        }
+      }
+    }
+  },
+  "news": {
+    "eyebrow": "Novosti",
+    "pageTitle": "Najnovije novosti",
+    "pageDescription": "Pregledajte najave, istaknute projekte i novosti o proizvodima Mavija.",
+    "backHome": "Natrag na početnu stranicu",
+    "backToNews": "Natrag na sve novosti"
+  },
+  "footer": {
+    "tagline": "Vrhunska veleprodajna distribucija kupaonske opreme za stručnjake koji traže izvrsnost.",
+    "contactHeading": "Kontakt",
+    "businessHoursHeading": "Radno vrijeme",
+    "followUsHeading": "Pratite nas",
+    "email": "info@mavi.si",
+    "phone": "+1 (555) 234-5678",
+    "addressLine1": "123 Design District",
+    "addressLine2": "New York, NY 10001",
+    "hoursWeekday": "Ponedjeljak – petak: 8.00 – 18.00",
+    "hoursSaturday": "Subota: 9.00 – 14.00",
+    "hoursSunday": "Nedjelja: zatvoreno",
+    "socialLinkedIn": "LinkedIn",
+    "socialInstagram": "Instagram",
+    "socialPinterest": "Pinterest",
+    "privacyPolicy": "Pravila privatnosti",
+    "termsOfService": "Uvjeti korištenja",
+    "copyright": "© 2026 Mavi d.o.o.. Sva prava pridržana."
+  },
+  "form": {
+    "contact": {
+      "nameLabel": "Ime",
+      "namePlaceholder": "Vaše ime",
+      "emailLabel": "E-pošta",
+      "emailPlaceholder": "vi@example.com",
+      "messageLabel": "Poruka",
+      "messagePlaceholder": "Opišite nam svoj projekt...",
+      "submitIdle": "Pošalji poruku",
+      "submitSubmitting": "Slanje...",
+      "toastTitle": "Poruka poslana",
+      "toastDescription": "Uskoro ćemo vam se javiti."
+    }
+  },
+  "validation": {
+    "contact": {
+      "nameRequired": "Ime je obavezno",
+      "emailRequired": "E-pošta je obavezna",
+      "emailInvalid": "Nevažeća e-mail adresa",
+      "messageMin": "Poruka mora imati najmanje 10 znakova"
+    }
+  },
+  "locale": {
+    "languageEnglish": "Engleski",
+    "languageSlovenian": "Slovenski",
+    "languageCroatian": "Hrvatski",
+    "ariaCurrentLanguage": "Jezik: {{language}}",
+    "ariaChangeLanguage": "Promijeni jezik"
+  },
+  "cta": {
+    "getInTouch": "Javite nam se",
+    "partnerWithUs": "Suradnja s nama",
+    "letsWorkTogether": "Radimo zajedno"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading": "Naše poslovnice",
+    "description": "Posjetite jednu od naših 9 poslovnica u Sloveniji ili nas kontaktirajte izravno.",
+    "selectOffice": "Odaberite poslovnicu",
+    "mapHint": "Dvaput kliknite na kartu za uključivanje/isključivanje interakcije",
+    "mapUnavailable": "Karta trenutačno nije dostupna",
+    "mapLoading": "Karta se učitava…"
+  },
+  "common": {
+    "returnHome": "Natrag na početnu",
+    "notFound": "Stranica nije pronađena"
+  }
+}

@@ -17,7 +17,7 @@
     "knip": "knip",
     "lint": "oxlint --deny-warnings .",
     "lint:ts": "bun run --filter '*' lint:ts",
-    "format": "oxfmt .",
+    "format": "bun run --filter '*' format",
     "format:check": "oxfmt --check .",
     "prepare": "husky"
   },
