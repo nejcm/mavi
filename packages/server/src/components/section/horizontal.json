@@ -1,0 +1,77 @@
+{
+  "collectionName": "section_horizontals",
+  "info": {
+    "displayName": "Horizontal",
+    "icon": "columns"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "displayName": "Name",
+      "description": "Block label for internal use"
+    },
+    "tagline": {
+      "type": "string",
+      "displayName": "Tagline",
+      "description": "Short subtitle"
+    },
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Section heading"
+    },
+    "content": {
+      "type": "richtext",
+      "displayName": "Content",
+      "description": "Rich text body"
+    },
+    "contentAlign": {
+      "type": "enumeration",
+      "enum": ["left", "right", "center"],
+      "displayName": "Content alignment",
+      "description": "Text alignment"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button",
+      "description": "Primary CTA"
+    },
+    "button2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button 2",
+      "description": "Secondary CTA"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "displayName": "Image",
+      "description": "Section image"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.video",
+      "displayName": "Video",
+      "description": "Video component"
+    },
+    "mediaPosition": {
+      "type": "enumeration",
+      "enum": ["right", "left"],
+      "displayName": "Media position",
+      "description": "Image/video side (left or right)"
+    },
+    "verticalAlign": {
+      "type": "enumeration",
+      "enum": ["top", "center", "bottom"],
+      "displayName": "Vertical alignment",
+      "description": "Vertical alignment of content and media"
+    }
+  }
+}

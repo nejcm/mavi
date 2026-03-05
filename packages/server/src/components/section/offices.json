@@ -1,0 +1,37 @@
+{
+  "collectionName": "section_offices",
+  "info": {
+    "displayName": "Offices",
+    "icon": "map-pin"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "displayName": "Name",
+      "description": "Block label for internal use"
+    },
+    "tagline": {
+      "type": "string",
+      "displayName": "Tagline",
+      "description": "Short subtitle"
+    },
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Section heading"
+    },
+    "subheading": {
+      "type": "richtext",
+      "displayName": "Subheading",
+      "description": "Optional subheading or intro text"
+    },
+    "offices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.office",
+      "displayName": "Offices",
+      "description": "Office/location entries"
+    }
+  }
+}

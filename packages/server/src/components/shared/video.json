@@ -1,0 +1,29 @@
+{
+  "collectionName": "shared_video",
+  "info": {
+    "displayName": "Video",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "displayName": "Text",
+      "description": "Caption or alt text"
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files", "videos"],
+      "displayName": "File",
+      "description": "Video file"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false,
+      "displayName": "Autoplay",
+      "description": "Play video automatically"
+    }
+  }
+}

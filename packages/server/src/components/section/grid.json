@@ -1,0 +1,62 @@
+{
+  "collectionName": "section_grids",
+  "info": {
+    "displayName": "Grid",
+    "icon": "th"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "displayName": "Name",
+      "description": "Block label for internal use"
+    },
+    "tagline": {
+      "type": "string",
+      "displayName": "Tagline",
+      "description": "Short subtitle"
+    },
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Section heading"
+    },
+    "content": {
+      "type": "richtext",
+      "displayName": "Content",
+      "description": "Rich text body"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button",
+      "description": "Primary CTA"
+    },
+    "button2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button 2",
+      "description": "Secondary CTA"
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": ["left", "right", "center"],
+      "displayName": "Alignment",
+      "description": "Header and content alignment"
+    },
+    "perRow": {
+      "type": "integer",
+      "displayName": "Items per row",
+      "description": "Number of grid items per row"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.grid-item",
+      "displayName": "Items",
+      "description": "Grid items"
+    }
+  }
+}

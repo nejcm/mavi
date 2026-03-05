@@ -5,41 +5,39 @@
     "singularName": "section",
     "pluralName": "sections",
     "displayName": "Section",
-    "description": "Reusable page section entries"
+    "description": "Reusable section entries with dynamic zone blocks"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true,
+      "displayName": "Name",
+      "description": "Section label for internal use"
     },
-    "tip": {
+    "type": {
       "type": "enumeration",
-      "enum": [
-        "cta",
-        "horizontal-section",
-        "vertical-section",
-        "grid-section",
-        "news",
-        "locations",
-        "slider-section",
-        "careers"
-      ]
+      "enum": ["grid", "horizontal", "vertical", "hero", "news", "offices", "logos"],
+      "required": true,
+      "displayName": "Type",
+      "description": "Section layout variant"
     },
-    "vsebina": {
+    "blocks": {
       "type": "dynamiczone",
       "components": [
-        "section.cta",
-        "section.horizontal-section",
-        "section.vertical-section",
-        "section.grid-section",
-        "section.news",
-        "section.locations",
-        "section.slider-section",
-        "section.careers"
-      ]
+        "section.hero",
+        "section.vertical",
+        "section.horizontal",
+        "section.grid",
+        "section.news-section",
+        "section.offices",
+        "section.logos"
+      ],
+      "displayName": "Blocks",
+      "description": "Dynamic zone with section content blocks"
     }
   }
 }

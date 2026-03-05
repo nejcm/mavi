@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "news",
+    "pluralName": "news-list",
+    "displayName": "News",
+    "description": "News posts"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": ["sl", "en", "hr"],
+      "required": true,
+      "displayName": "Language",
+      "description": "News post locale"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "displayName": "Title",
+      "description": "News headline"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "displayName": "Slug",
+      "description": "URL-friendly identifier"
+    },
+    "summary": {
+      "type": "text",
+      "displayName": "Summary",
+      "description": "Short excerpt for listings"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "displayName": "Content",
+      "description": "Full news body"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "displayName": "Image",
+      "description": "Featured or cover image"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "displayName": "Featured",
+      "description": "Show in featured news"
+    },
+    "date": {
+      "type": "date",
+      "required": false,
+      "displayName": "Date",
+      "description": "Publication or event date"
+    }
+  }
+}

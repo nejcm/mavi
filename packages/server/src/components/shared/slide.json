@@ -1,0 +1,49 @@
+{
+  "collectionName": "shared_slide",
+  "info": {
+    "displayName": "Slide",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "displayName": "Image",
+      "description": "Slide background or main image"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.video",
+      "displayName": "Video",
+      "description": "Slide video"
+    },
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Slide title"
+    },
+    "content": {
+      "type": "richtext",
+      "displayName": "Content",
+      "description": "Slide body text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button",
+      "description": "Primary CTA button"
+    },
+    "button2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button 2",
+      "description": "Secondary CTA button"
+    }
+  }
+}

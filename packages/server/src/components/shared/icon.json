@@ -1,0 +1,40 @@
+{
+  "collectionName": "shared_icon",
+  "info": {
+    "displayName": "Icon",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon",
+      "displayName": "Icon",
+      "description": "Lucide icon"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ],
+      "displayName": "Size",
+      "description": "Icon size variant"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "c-1",
+        "c-2",
+        "c-3",
+        "c-4"
+      ],
+      "displayName": "Color",
+      "description": "Icon color theme"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": "Page content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "displayName": "Name",
+      "description": "Page title for internal use"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": ["sl", "en", "hr"],
+      "required": true,
+      "displayName": "Language",
+      "description": "Page locale (Slovenian, English, Croatian)"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "displayName": "Slug",
+      "description": "URL-friendly identifier"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "displayName": "SEO",
+      "description": "Meta title, description and share image"
+    },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.section",
+      "displayName": "Sections",
+      "description": "Page section blocks with layout and section references"
+    }
+  }
+}

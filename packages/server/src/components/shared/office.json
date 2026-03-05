@@ -1,0 +1,46 @@
+{
+  "collectionName": "shared_office",
+  "info": {
+    "displayName": "Office",
+    "icon": "building"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "displayName": "Name",
+      "description": "Office or location name"
+    },
+    "addressLine": {
+      "type": "string",
+      "required": true,
+      "displayName": "Address",
+      "description": "Street address"
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "displayName": "City",
+      "description": "City"
+    },
+    "country": {
+      "type": "string",
+      "required": true,
+      "displayName": "Country",
+      "description": "Country"
+    },
+    "lat": {
+      "type": "decimal",
+      "required": true,
+      "displayName": "Latitude",
+      "description": "Map latitude"
+    },
+    "lng": {
+      "type": "decimal",
+      "required": true,
+      "displayName": "Longitude",
+      "description": "Map longitude"
+    }
+  }
+}

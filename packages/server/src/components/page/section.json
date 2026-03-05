@@ -1,0 +1,36 @@
+{
+  "collectionName": "page_section",
+  "info": {
+    "displayName": "Page Section",
+    "icon": "layer-group"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::section.section",
+      "required": true,
+      "displayName": "Section",
+      "description": "Reference to section content"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": ["none", "bg-1", "bg-2", "bg-3", "bg-4"],
+      "displayName": "Background",
+      "description": "Section background style"
+    },
+    "spaceTop": {
+      "type": "enumeration",
+      "enum": ["none", "xl", "lg", "md", "sm", "xs"],
+      "displayName": "Space top",
+      "description": "Top spacing/padding"
+    },
+    "spaceBottom": {
+      "type": "enumeration",
+      "enum": ["none", "xl", "lg", "md", "sm", "xs"],
+      "displayName": "Space bottom",
+      "description": "Bottom spacing/padding"
+    }
+  }
+}
