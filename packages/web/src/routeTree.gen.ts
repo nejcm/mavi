@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsIndexRouteImport } from './routes/news/index'
+import { Route as TestChar123SlugChar125RouteImport } from './routes/test/{-$slug}'
 import { Route as NewsSlugRouteImport } from './routes/news/$slug'
 
 const SplatRoute = SplatRouteImport.update({
@@ -29,6 +30,11 @@ const NewsIndexRoute = NewsIndexRouteImport.update({
   path: '/news/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestChar123SlugChar125Route = TestChar123SlugChar125RouteImport.update({
+  id: '/test/{-$slug}',
+  path: '/test/{-$slug}',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsSlugRoute = NewsSlugRouteImport.update({
   id: '/news/$slug',
   path: '/news/$slug',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/test/{-$slug}': typeof TestChar123SlugChar125Route
   '/news/': typeof NewsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/test/{-$slug}': typeof TestChar123SlugChar125Route
   '/news': typeof NewsIndexRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/test/{-$slug}': typeof TestChar123SlugChar125Route
   '/news/': typeof NewsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$' | '/news/$slug' | '/news/'
+  fullPaths: '/' | '/$' | '/news/$slug' | '/test/{-$slug}' | '/news/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$' | '/news/$slug' | '/news'
-  id: '__root__' | '/' | '/$' | '/news/$slug' | '/news/'
+  to: '/' | '/$' | '/news/$slug' | '/test/{-$slug}' | '/news'
+  id: '__root__' | '/' | '/$' | '/news/$slug' | '/test/{-$slug}' | '/news/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   NewsSlugRoute: typeof NewsSlugRoute
+  TestChar123SlugChar125Route: typeof TestChar123SlugChar125Route
   NewsIndexRoute: typeof NewsIndexRoute
 }
 
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/test/{-$slug}': {
+      id: '/test/{-$slug}'
+      path: '/test/{-$slug}'
+      fullPath: '/test/{-$slug}'
+      preLoaderRoute: typeof TestChar123SlugChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/news/$slug': {
       id: '/news/$slug'
       path: '/news/$slug'
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   NewsSlugRoute: NewsSlugRoute,
+  TestChar123SlugChar125Route: TestChar123SlugChar125Route,
   NewsIndexRoute: NewsIndexRoute,
 }
 export const routeTree = rootRouteImport

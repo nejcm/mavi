@@ -280,6 +280,23 @@
   },
   "common": {
     "returnHome": "Return to Home",
-    "notFound": "Oops! Page not found"
+    "notFound": "Oops! Page not found",
+    "error404": "Error 404",
+    "notFoundDescription": "The page you are looking for might have moved, been removed, or never existed.",
+    "notFoundContentDescription": "We could not find this content. It may have been removed, unpublished, or the link may be outdated.",
+    "sectionImage": "Section image",
+    "toggleMenu": "Toggle menu",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "more": "More",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "toggleSidebar": "Toggle sidebar",
+    "breadcrumb": "Breadcrumb",
+    "pagination": "Pagination",
+    "goToPreviousPage": "Go to previous page",
+    "goToNextPage": "Go to next page",
+    "morePages": "More pages"
   }
 }

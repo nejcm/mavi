@@ -280,6 +280,23 @@
   },
   "common": {
     "returnHome": "Natrag na početnu",
-    "notFound": "Stranica nije pronađena"
+    "notFound": "Stranica nije pronađena",
+    "error404": "Pogreška 404",
+    "notFoundDescription": "Stranica koju tražite možda je premještena, uklonjena ili nikada nije postojala.",
+    "notFoundContentDescription": "Nismo mogli pronaći ovaj sadržaj. Možda je uklonjen, povučen iz objave ili je poveznica zastarjela.",
+    "sectionImage": "Slika odjeljka",
+    "toggleMenu": "Prebaci izbornik",
+    "close": "Zatvori",
+    "previous": "Prethodno",
+    "next": "Sljedeće",
+    "more": "Više",
+    "previousSlide": "Prethodni slajd",
+    "nextSlide": "Sljedeći slajd",
+    "toggleSidebar": "Prebaci bočnu traku",
+    "breadcrumb": "Navigacijska staza",
+    "pagination": "Straničenje",
+    "goToPreviousPage": "Idi na prethodnu stranicu",
+    "goToNextPage": "Idi na sljedeću stranicu",
+    "morePages": "Više stranica"
   }
 }
