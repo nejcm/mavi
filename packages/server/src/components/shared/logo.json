@@ -1,0 +1,29 @@
+{
+  "collectionName": "shared_logo",
+  "info": {
+    "displayName": "Logo",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "displayName": "Name",
+      "description": "Logo label (e.g. company name)"
+    },
+    "url": {
+      "type": "string",
+      "displayName": "URL",
+      "description": "Link when logo is clicked"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"],
+      "displayName": "Image",
+      "description": "Logo image"
+    }
+  }
+}

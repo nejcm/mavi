@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "Section",
+    "description": "Reusable section entries with dynamic zone blocks"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "displayName": "Name",
+      "description": "Section label for internal use"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["grid", "horizontal", "vertical", "hero", "news", "offices", "logos"],
+      "required": true,
+      "displayName": "Type",
+      "description": "Section layout variant"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "section.hero",
+        "section.vertical",
+        "section.horizontal",
+        "section.grid",
+        "section.news-section",
+        "section.offices",
+        "section.logos"
+      ],
+      "displayName": "Blocks",
+      "description": "Dynamic zone with section content blocks"
+    }
+  }
+}

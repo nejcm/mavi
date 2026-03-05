@@ -3,72 +3,203 @@
 const fs = require("fs-extra");
 const path = require("path");
 const mime = require("mime-types");
-const { categories, authors, articles, global, about } = require("../data/data.json");
 
-async function seedExampleApp() {
-  const shouldImportSeedData = await isFirstRun();
+// Reuse frontend copy for labels/headings
+// eslint-disable-next-line import/no-unresolved
+const en = require("../../web/src/locales/en.json");
 
-  if (shouldImportSeedData) {
-    try {
-      console.log("Setting up the template...");
-      await importSeedData();
-      console.log("Ready to go");
-    } catch (error) {
-      console.log("Could not import seed data");
-      console.error(error);
-    }
-  } else {
-    console.log(
-      "Seed data has already been imported. We cannot reimport unless you clear your database first.",
-    );
-  }
-}
+// Offices (mirrors packages/web/src/data/offices.ts)
+const officeLocations = [
+  {
+    id: "maribor",
+    name: "Poslovna enota Maribor",
+    addressLine: "Novakova ulica 8",
+    city: "Maribor",
+    country: "Slovenija",
+    lat: 46.5596,
+    lng: 15.6459,
+  },
+  {
+    id: "ljubljana-vic",
+    name: "Poslovna enota Ljubljana - Vič",
+    addressLine: "Cesta v Mestni log 86",
+    city: "Ljubljana",
+    country: "Slovenija",
+    lat: 46.0406,
+    lng: 14.4871,
+  },
+  {
+    id: "ljubljana-bezigrad",
+    name: "Poslovna enota Ljubljana - Bežigrad",
+    addressLine: "Slovenčeva ulica 97",
+    city: "Ljubljana",
+    country: "Slovenija",
+    lat: 46.0839,
+    lng: 14.511,
+  },
+  {
+    id: "celje",
+    name: "Poslovna enota Celje",
+    addressLine: "Podjavorškova ulica 2",
+    city: "Celje",
+    country: "Slovenija",
+    lat: 46.2397,
+    lng: 15.2677,
+  },
+  {
+    id: "novo-mesto",
+    name: "Poslovna enota Novo mesto",
+    addressLine: "Medičeva ulica 15",
+    city: "Novo mesto",
+    country: "Slovenija",
+    lat: 45.8016,
+    lng: 15.1618,
+  },
+  {
+    id: "murska-sobota",
+    name: "Poslovna enota Murska Sobota",
+    addressLine: "Obrtna ulica 42",
+    city: "Murska Sobota",
+    country: "Slovenija",
+    lat: 46.6645,
+    lng: 16.1716,
+  },
+  {
+    id: "koper",
+    name: "Poslovna enota Koper",
+    addressLine: "Sermin 71i",
+    city: "Koper",
+    country: "Slovenija",
+    lat: 45.5519,
+    lng: 13.7306,
+  },
+  {
+    id: "slovenska-bistrica",
+    name: "Poslovna enota Slovenska Bistrica",
+    addressLine: "Stepišnikova ulica 12a",
+    city: "Slovenska Bistrica",
+    country: "Slovenija",
+    lat: 46.3928,
+    lng: 15.5735,
+  },
+  {
+    id: "ptuj",
+    name: "Poslovna enota Ptuj",
+    addressLine: "Ob Dravi 3a",
+    city: "Ptuj",
+    country: "Slovenija",
+    lat: 46.4201,
+    lng: 15.8702,
+  },
+];
 
-async function isFirstRun() {
-  const pluginStore = strapi.store({
-    environment: strapi.config.environment,
-    type: "type",
-    name: "setup",
-  });
-  const initHasRun = await pluginStore.get({ key: "initHasRun" });
-  await pluginStore.set({ key: "initHasRun", value: true });
-  return !initHasRun;
-}
+// News posts (mirrors packages/web/src/data/news.ts, without image imports)
+const newsPosts = [
+  {
+    id: "news-01",
+    slug: "mavi-expands-warehouse-capacity",
+    title: "Mavi expands warehouse capacity for faster regional delivery",
+    excerpt:
+      "We completed a warehouse expansion focused on faster lead times and more stable inventory for our partner showrooms.",
+    content: [
+      "Mavi has finalized an expansion of its regional warehouse operations to support growing demand from partner showrooms and installers.",
+      "The expansion adds new storage zones for high-turnover bathroom fittings and improves internal picking workflows. This allows our logistics team to ship recurring orders with shorter processing windows.",
+      "In practice, partners can expect better product availability, reduced stock gaps for core lines, and more predictable delivery schedules across key markets.",
+    ],
+    date: "2026-02-20",
+    category: "Operations",
+    featured: true,
+  },
+  {
+    id: "news-02",
+    slug: "new-sustainable-product-lines",
+    title: "New sustainable product lines arrive this spring",
+    excerpt:
+      "A new product wave introduces lower-consumption faucets and shower systems designed for commercial and residential projects.",
+    content: [
+      "This spring collection introduces a curated selection of low-flow faucets, dual-flush systems, and shower components designed around long-term durability.",
+      "The products are aimed at projects that need measurable water-efficiency improvements without compromising comfort or visual quality.",
+      "Technical data sheets and availability timelines are now ready for specification teams and can be requested through your account manager.",
+    ],
+    date: "2026-02-14",
+    category: "Products",
+  },
+  {
+    id: "news-03",
+    slug: "design-partner-program-launch",
+    title: "Mavi launches design partner program",
+    excerpt:
+      "Architects and interior studios can now join our new partner framework with technical consulting and project support.",
+    content: [
+      "The new design partner program was created for architectural and interior design teams working on medium and large-scale bathroom projects.",
+      "Members get early product previews, direct technical support, and structured assistance during specification and procurement stages.",
+      "The program is now open in selected regions, with broader rollout planned through the rest of the year.",
+    ],
+    date: "2026-02-05",
+    category: "Partnerships",
+  },
+  {
+    id: "news-04",
+    slug: "showroom-training-series-2026",
+    title: "2026 showroom training series opens for registration",
+    excerpt:
+      "Our annual product and sales training program starts in March with focused sessions for retail and technical teams.",
+    content: [
+      "Registration is now open for the 2026 showroom training series, a practical program designed for front-of-house and technical sales teams.",
+      "Sessions cover product positioning, installation prerequisites, and cross-category recommendations for premium bathroom projects.",
+      "Each training day includes live demonstrations and Q&A with product specialists.",
+    ],
+    date: "2026-01-28",
+    category: "Events",
+  },
+  {
+    id: "news-05",
+    slug: "case-study-urban-hotel-renovation",
+    title: "Case study: Urban hotel renovation delivered on schedule",
+    excerpt:
+      "A recent hospitality renovation used Mavi systems across 180 rooms, balancing timeline pressure and quality requirements.",
+    content: [
+      "A multi-phase hotel renovation project in Central Europe reached completion on schedule, with Mavi products integrated across guest bathrooms and wellness areas.",
+      "The project team prioritized consistent finish quality, straightforward maintenance, and coordinated deliveries across staggered installation phases.",
+      "Detailed outcomes from the project will be published in an extended technical case study this quarter.",
+    ],
+    date: "2026-01-16",
+    category: "Projects",
+  },
+];
 
-async function setPublicPermissions(newPermissions) {
-  // Find the ID of the public role
-  const publicRole = await strapi.query("plugin::users-permissions.role").findOne({
-    where: {
-      type: "public",
-    },
-  });
+// Logos (mirrors logoNames in CompanyLogos.tsx)
+const logoNames = [
+  "Nordic Build",
+  "Urban Forma",
+  "Atlas Living",
+  "Prime Habitat",
+  "Linea Spaces",
+  "Vista Construct",
+  "Azure Estates",
+  "Terra Design",
+];
 
-  // Create the new permissions and link them to the public role
-  const allPermissionsToCreate = [];
-  Object.keys(newPermissions).map((controller) => {
-    const actions = newPermissions[controller];
-    const permissionsToCreate = actions.map((action) => {
-      return strapi.query("plugin::users-permissions.permission").create({
-        data: {
-          action: `api::${controller}.${controller}.${action}`,
-          role: publicRole.id,
-        },
-      });
-    });
-    allPermissionsToCreate.push(...permissionsToCreate);
-  });
-  await Promise.all(allPermissionsToCreate);
-}
+// Projects (mirrors keys in FeaturedProjects.tsx)
+const projectKeys = [
+  "luxuryHotel",
+  "residentialDevelopment",
+  "wellnessSpa",
+  "officeTower",
+  "retailCenter",
+  "coastalVilla",
+];
+
+// --- File helpers (adapted from scripts/seed.js) ---
 
 function getFileSizeInBytes(filePath) {
   const stats = fs.statSync(filePath);
-  const fileSizeInBytes = stats["size"];
+  const fileSizeInBytes = stats.size;
   return fileSizeInBytes;
 }
 
 function getFileData(fileName) {
   const filePath = path.join("data", "uploads", fileName);
-  // Parse the file metadata
   const size = getFileSizeInBytes(filePath);
   const ext = fileName.split(".").pop();
   const mimeType = mime.lookup(ext || "") || "";
@@ -97,25 +228,12 @@ async function uploadFile(file, name) {
     });
 }
 
-// Create an entry and attach files if there are any
-async function createEntry({ model, entry }) {
-  try {
-    // Actually create the entry in Strapi
-    await strapi.documents(`api::${model}.${model}`).create({
-      data: entry,
-    });
-  } catch (error) {
-    console.error({ model, entry, error });
-  }
-}
-
 async function checkFileExistsBeforeUpload(files) {
   const existingFiles = [];
   const uploadedFiles = [];
   const filesCopy = [...files];
 
   for (const fileName of filesCopy) {
-    // Check if the file already exists in Strapi
     const fileWhereName = await strapi.query("plugin::upload.file").findOne({
       where: {
         name: fileName.replace(/\..*$/, ""),
@@ -123,135 +241,192 @@ async function checkFileExistsBeforeUpload(files) {
     });
 
     if (fileWhereName) {
-      // File exists, don't upload it
       existingFiles.push(fileWhereName);
     } else {
-      // File doesn't exist, upload it
       const fileData = getFileData(fileName);
       const fileNameNoExtension = fileName.split(".").shift();
       const [file] = await uploadFile(fileData, fileNameNoExtension);
       uploadedFiles.push(file);
     }
   }
+
   const allFiles = [...existingFiles, ...uploadedFiles];
-  // If only one file then return only that file
   return allFiles.length === 1 ? allFiles[0] : allFiles;
 }
 
-async function updateBlocks(blocks) {
-  const updatedBlocks = [];
-  for (const block of blocks) {
-    if (block.__component === "shared.media") {
-      const uploadedFiles = await checkFileExistsBeforeUpload([block.file]);
-      // Copy the block to not mutate directly
-      const blockCopy = { ...block };
-      // Replace the file name on the block with the actual file
-      blockCopy.file = uploadedFiles;
-      updatedBlocks.push(blockCopy);
-    } else if (block.__component === "shared.slider") {
-      // Get files already uploaded to Strapi or upload new files
-      const existingAndUploadedFiles = await checkFileExistsBeforeUpload(block.files);
-      // Copy the block to not mutate directly
-      const blockCopy = { ...block };
-      // Replace the file names on the block with the actual files
-      blockCopy.files = existingAndUploadedFiles;
-      // Push the updated block
-      updatedBlocks.push(blockCopy);
-    } else {
-      // Just push the block as is
-      updatedBlocks.push(block);
-    }
-  }
+// --- Seed helpers ---
 
-  return updatedBlocks;
+async function createDocument(uid, data) {
+  try {
+    await strapi.documents(uid).create({ data });
+  } catch (error) {
+    console.error(`Error creating document for ${uid}`, error);
+  }
 }
 
-async function importArticles() {
-  for (const article of articles) {
-    const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
-    const updatedBlocks = await updateBlocks(article.blocks);
-
-    await createEntry({
-      model: "article",
-      entry: {
-        ...article,
-        cover,
-        blocks: updatedBlocks,
-        // Make sure it's not a draft
-        publishedAt: Date.now(),
-      },
+async function seedNews(defaultImage) {
+  for (const post of newsPosts) {
+    await createDocument("api::news.news", {
+      language: "en",
+      title: post.title,
+      slug: post.slug,
+      summary: post.excerpt,
+      content: post.content.join("\n\n"),
+      date: post.date,
+      featured: Boolean(post.featured),
+      image: defaultImage,
     });
   }
 }
 
-async function importGlobal() {
-  const favicon = await checkFileExistsBeforeUpload(["favicon.png"]);
-  const shareImage = await checkFileExistsBeforeUpload(["default-image.png"]);
-  return createEntry({
-    model: "global",
-    entry: {
-      ...global,
-      favicon,
-      // Make sure it's not a draft
-      publishedAt: Date.now(),
-      defaultSeo: {
-        ...global.defaultSeo,
-        shareImage,
+async function seedHeroSection() {
+  const hero = en.home.hero;
+
+  const slides = [
+    {
+      __component: "shared.slide",
+      heading: hero.heading,
+      content: hero.subheading,
+      button: {
+        __component: "shared.button",
+        type: "solid",
+        colorScheme: "white",
+        size: "lg",
+        text: hero.primaryCta,
+      },
+      button2: {
+        __component: "shared.button",
+        type: "outline",
+        colorScheme: "white",
+        size: "lg",
+        text: hero.secondaryCta,
       },
     },
-  });
-}
-
-async function importAbout() {
-  const updatedBlocks = await updateBlocks(about.blocks);
-
-  await createEntry({
-    model: "about",
-    entry: {
-      ...about,
-      blocks: updatedBlocks,
-      // Make sure it's not a draft
-      publishedAt: Date.now(),
-    },
-  });
-}
-
-async function importCategories() {
-  for (const category of categories) {
-    await createEntry({ model: "category", entry: category });
-  }
-}
-
-async function importAuthors() {
-  for (const author of authors) {
-    const avatar = await checkFileExistsBeforeUpload([author.avatar]);
-
-    await createEntry({
-      model: "author",
-      entry: {
-        ...author,
-        avatar,
+    {
+      __component: "shared.slide",
+      content: hero.subheading,
+      button: {
+        __component: "shared.button",
+        type: "solid",
+        colorScheme: "white",
+        size: "lg",
+        text: hero.primaryCta,
       },
-    });
-  }
+    },
+    {
+      __component: "shared.slide",
+      heading: hero.heading,
+    },
+  ];
+
+  await createDocument("api::section.section", {
+    name: "Home – Hero",
+    type: "hero",
+    blocks: [
+      {
+        __component: "section.hero",
+        name: "Hero",
+        slides,
+      },
+    ],
+  });
 }
 
-async function importSeedData() {
-  // Allow read of application content types
-  await setPublicPermissions({
-    article: ["find", "findOne"],
-    category: ["find", "findOne"],
-    author: ["find", "findOne"],
-    global: ["find", "findOne"],
-    about: ["find", "findOne"],
+async function seedOfficesSection() {
+  const contact = en.contact;
+
+  await createDocument("api::section.section", {
+    name: "Home – Offices",
+    type: "offices",
+    blocks: [
+      {
+        __component: "section.offices",
+        name: "Offices",
+        tagline: contact.eyebrow,
+        heading: contact.heading,
+        subheading: contact.description,
+        offices: officeLocations.map((o) => ({
+          __component: "shared.office",
+          name: o.name,
+          addressLine: o.addressLine,
+          city: o.city,
+          country: o.country,
+          lat: o.lat,
+          lng: o.lng,
+        })),
+      },
+    ],
+  });
+}
+
+async function seedLogosSection(defaultImage) {
+  const logosCopy = en.home.logos;
+
+  await createDocument("api::section.section", {
+    name: "Home – Logos",
+    type: "logos",
+    blocks: [
+      {
+        __component: "section.logos",
+        name: "Logos",
+        tagline: logosCopy.eyebrow,
+        heading: logosCopy.heading,
+        content: "",
+        logos: logoNames.map((name) => ({
+          __component: "shared.logo",
+          name,
+          image: defaultImage,
+        })),
+      },
+    ],
+  });
+}
+
+async function seedProjectsSection(defaultImage) {
+  const projectsCopy = en.home.projects;
+
+  const items = projectKeys.map((key) => {
+    const item = projectsCopy.items[key];
+    return {
+      __component: "shared.grid-item",
+      heading: item.title,
+      tagline: item.location,
+      content: "",
+      image: defaultImage,
+      mediaPosition: "top",
+      align: "left",
+    };
   });
 
-  // Create all entries
-  await importCategories();
-  await importAuthors();
-  await importArticles();
-  await importGlobal();
-  await importAbout();
+  await createDocument("api::section.section", {
+    name: "Home – Projects",
+    type: "grid",
+    blocks: [
+      {
+        __component: "section.grid",
+        name: "Featured projects",
+        tagline: projectsCopy.eyebrow,
+        heading: projectsCopy.heading,
+        content: "",
+        perRow: 3,
+        items,
+      },
+    ],
+  });
+}
+
+async function seedMavi() {
+  console.log("Seeding Mavi content (news, hero slides, offices, projects, logos)...");
+
+  const defaultImage = await checkFileExistsBeforeUpload(["default-image.png"]);
+
+  await seedNews(defaultImage);
+  await seedHeroSection();
+  await seedOfficesSection();
+  await seedProjectsSection(defaultImage);
+  await seedLogosSection(defaultImage);
+
+  console.log("Mavi content seed finished.");
 }
 
 async function main() {
@@ -262,10 +437,14 @@ async function main() {
 
   app.log.level = "error";
 
-  await seedExampleApp();
-  await app.destroy();
-
-  process.exit(0);
+  try {
+    await seedMavi();
+  } catch (error) {
+    console.error("Mavi seed failed", error);
+    process.exitCode = 1;
+  } finally {
+    await app.destroy();
+  }
 }
 
 main().catch((error) => {

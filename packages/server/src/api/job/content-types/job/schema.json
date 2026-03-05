@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
+    "description": "Open job positions"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": ["sl", "en", "hr"],
+      "required": true,
+      "displayName": "Language",
+      "description": "Job posting locale"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "displayName": "Title",
+      "description": "Job position title"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "displayName": "Description",
+      "description": "Job description and requirements"
+    },
+    "location": {
+      "type": "string",
+      "displayName": "Location",
+      "description": "Office or remote location"
+    },
+    "startDate": {
+      "type": "date",
+      "displayName": "Start date",
+      "description": "Position start or publish date"
+    },
+    "endDate": {
+      "type": "date",
+      "displayName": "End date",
+      "description": "Application deadline or position end date"
+    }
+  }
+}

@@ -78,6 +78,25 @@
         }
       }
     },
+    "highlights": {
+      "eyebrow": "Izpostavljeno",
+      "heading": "Dornbracht, toplotne črpalke in ViSoft",
+      "subheading": "Programi in rešitve, ki prinašajo več udobja, učinkovitosti in individualnosti v vaše projekte.",
+      "items": {
+        "dornbracht": {
+          "title": "Dornbracht – kultura življenja",
+          "body": "Več udobja, več izkoristka, več individualnosti. Dornbracht kultivira habitate kopalnic in kuhinj."
+        },
+        "heatPumps": {
+          "title": "Toplotne črpalke",
+          "body": "Za učinkovito ter varčno ogrevanje prostorov in pripravo tople sanitarne vode."
+        },
+        "visoft": {
+          "title": "ViSoft Premium 2018",
+          "body": "S pomočjo programa ViSoft in 3D grafike vam po vaših izmerah prostora in glede na izbrano kopalniško opremo narišemo in predstavimo izgled vaše bodoče kopalnice."
+        }
+      }
+    },
     "news": {
       "eyebrow": "Zadnje novice",
       "heading": "Novice in vpogledi",
@@ -261,6 +280,23 @@
   },
   "common": {
     "returnHome": "Nazaj na domačo",
-    "notFound": "Stran ni bila najdena"
+    "notFound": "Stran ni bila najdena",
+    "error404": "Napaka 404",
+    "notFoundDescription": "Stran, ki jo iščete, je bila morda premaknjena, odstranjena ali pa nikoli ni obstajala.",
+    "notFoundContentDescription": "Te vsebine nismo našli. Morda je bila odstranjena, umaknjena iz objave ali pa je povezava zastarela.",
+    "sectionImage": "Slika razdelka",
+    "toggleMenu": "Preklopi meni",
+    "close": "Zapri",
+    "previous": "Prejšnje",
+    "next": "Naslednje",
+    "more": "Več",
+    "previousSlide": "Prejšnji diapozitiv",
+    "nextSlide": "Naslednji diapozitiv",
+    "toggleSidebar": "Preklopi stransko vrstico",
+    "breadcrumb": "Drobtinice",
+    "pagination": "Stranjenje",
+    "goToPreviousPage": "Pojdi na prejšnjo stran",
+    "goToNextPage": "Pojdi na naslednjo stran",
+    "morePages": "Več strani"
   }
 }

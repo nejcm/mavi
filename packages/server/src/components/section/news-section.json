@@ -1,0 +1,38 @@
+{
+  "collectionName": "section_news",
+  "info": {
+    "displayName": "News section",
+    "icon": "newspaper"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "displayName": "Name",
+      "description": "Block label for internal use"
+    },
+    "tagline": {
+      "type": "string",
+      "displayName": "Tagline",
+      "description": "Short subtitle"
+    },
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Section heading"
+    },
+    "subheading": {
+      "type": "richtext",
+      "displayName": "Subheading",
+      "description": "Optional subheading or intro text"
+    },
+    "limit": {
+      "type": "integer",
+      "default": 3,
+      "min": 1,
+      "max": 9,
+      "displayName": "Limit",
+      "description": "Max number of news items to show (1–9)"
+    }
+  }
+}

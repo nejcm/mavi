@@ -1,0 +1,27 @@
+{
+  "collectionName": "section_logos",
+  "info": {
+    "displayName": "Logos",
+    "icon": "gallery"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.logo"
+    }
+  }
+}

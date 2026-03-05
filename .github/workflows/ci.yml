@@ -5,6 +5,7 @@ on:
     branches: [main, master, develop]
   pull_request:
     branches: [main, master, develop]
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -34,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Oxlint
+      - name: Lint
         run: bun run lint
 
       - name: Format check
@@ -133,7 +134,7 @@ jobs:
       - name: Build web app
         run: bun run build:web
         env:
-          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
+          BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -143,5 +144,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        env:
-          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/

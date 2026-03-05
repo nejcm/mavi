@@ -1,0 +1,45 @@
+{
+  "collectionName": "shared_button",
+  "info": {
+    "displayName": "Button",
+    "icon": "button"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["solid", "link", "outline"],
+      "displayName": "Type",
+      "description": "Button style variant"
+    },
+    "colorScheme": {
+      "type": "enumeration",
+      "enum": ["default", "black", "white", "red", "green", "blue"],
+      "displayName": "Color scheme",
+      "description": "Button color theme"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": ["xs", "sm", "md", "lg", "xl"],
+      "displayName": "Size",
+      "description": "Button size"
+    },
+    "text": {
+      "type": "string",
+      "required": true,
+      "displayName": "Text",
+      "description": "Button label"
+    },
+    "url": {
+      "type": "string",
+      "displayName": "URL",
+      "description": "Link destination"
+    },
+    "blank": {
+      "type": "boolean",
+      "default": false,
+      "displayName": "Open in new tab",
+      "description": "Open link in new window"
+    }
+  }
+}

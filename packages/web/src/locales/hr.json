@@ -78,6 +78,25 @@
         }
       }
     },
+    "highlights": {
+      "eyebrow": "Izdvojeno",
+      "heading": "Dornbracht, toplinske pumpe i ViSoft",
+      "subheading": "Programi i rješenja koja donose više udobnosti, učinkovitosti i individualnosti u vaše projekte kupaonica.",
+      "items": {
+        "dornbracht": {
+          "title": "Dornbracht – kultura življenja",
+          "body": "Više udobnosti, više iskorištenja, više individualnosti. Dornbracht oblikuje prostore kupaonica i kuhinja u prave životne ambijente."
+        },
+        "heatPumps": {
+          "title": "Toplinske pumpe",
+          "body": "Za učinkovito i štedljivo grijanje prostora te pripremu tople sanitarne vode."
+        },
+        "visoft": {
+          "title": "ViSoft Premium 2018",
+          "body": "Uz pomoć programa ViSoft i 3D grafike, prema vašim mjerama prostora i odabranoj kupaonskoj opremi, izrađujemo nacrt i prikaz izgleda vaše buduće kupaonice."
+        }
+      }
+    },
     "news": {
       "eyebrow": "Najnovije novosti",
       "heading": "Novosti i uvidi",
@@ -261,6 +280,23 @@
   },
   "common": {
     "returnHome": "Natrag na početnu",
-    "notFound": "Stranica nije pronađena"
+    "notFound": "Stranica nije pronađena",
+    "error404": "Pogreška 404",
+    "notFoundDescription": "Stranica koju tražite možda je premještena, uklonjena ili nikada nije postojala.",
+    "notFoundContentDescription": "Nismo mogli pronaći ovaj sadržaj. Možda je uklonjen, povučen iz objave ili je poveznica zastarjela.",
+    "sectionImage": "Slika odjeljka",
+    "toggleMenu": "Prebaci izbornik",
+    "close": "Zatvori",
+    "previous": "Prethodno",
+    "next": "Sljedeće",
+    "more": "Više",
+    "previousSlide": "Prethodni slajd",
+    "nextSlide": "Sljedeći slajd",
+    "toggleSidebar": "Prebaci bočnu traku",
+    "breadcrumb": "Navigacijska staza",
+    "pagination": "Straničenje",
+    "goToPreviousPage": "Idi na prethodnu stranicu",
+    "goToNextPage": "Idi na sljedeću stranicu",
+    "morePages": "Više stranica"
   }
 }

@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "lint": "oxlint --deny-warnings .",
     "lint:ts": "tsc --noEmit -p tsconfig.app.json",
-    "format": "oxfmt .",
-    "format:check": "oxfmt --check .",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "test": "vitest run",
@@ -56,6 +53,7 @@
     "date-fns": "~4.1.0",
     "embla-carousel-react": "~8.6.0",
     "embla-carousel-autoplay": "~8.6.0",
+    "embla-carousel-class-names": "~8.6.0",
     "framer-motion": "~12.34.5",
     "i18next": "~25.8.14",
     "i18next-browser-languagedetector": "~8.2.1",

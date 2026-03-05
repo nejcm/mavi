@@ -15,6 +15,7 @@
     "**/dist/**",
     "**/dist-ssr/**",
     "**/coverage/**",
+    "**/generated/**",
     "**/.vite/**",
     "**/*.gen.ts",
     "**/.agents/**",

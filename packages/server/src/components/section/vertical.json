@@ -1,0 +1,60 @@
+{
+  "collectionName": "section_verticals",
+  "info": {
+    "displayName": "Vertical",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "displayName": "Name",
+      "description": "Block label for internal use"
+    },
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Section heading"
+    },
+    "content": {
+      "type": "richtext",
+      "displayName": "Content",
+      "description": "Rich text body"
+    },
+    "contentAlign": {
+      "type": "enumeration",
+      "enum": ["left", "right", "center"],
+      "displayName": "Content alignment",
+      "description": "Text alignment"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button",
+      "description": "Primary CTA"
+    },
+    "button2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button",
+      "displayName": "Button 2",
+      "description": "Secondary CTA"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "displayName": "Image",
+      "description": "Section image"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.video",
+      "displayName": "Video",
+      "description": "Video component"
+    }
+  }
+}

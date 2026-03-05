@@ -78,6 +78,25 @@
         }
       }
     },
+    "highlights": {
+      "eyebrow": "Featured programs",
+      "heading": "Dornbracht, heat pumps & ViSoft",
+      "subheading": "Signature brands and services that bring more comfort, efficiency, and individuality to your bathroom projects.",
+      "items": {
+        "dornbracht": {
+          "title": "Dornbracht – Culture of Living",
+          "body": "More comfort, more performance, more individuality. Dornbracht elevates bathroom and kitchen spaces into refined living environments."
+        },
+        "heatPumps": {
+          "title": "Heat pumps",
+          "body": "For highly efficient and economical space heating and domestic hot water preparation."
+        },
+        "visoft": {
+          "title": "ViSoft Premium 2018",
+          "body": "With the ViSoft program and 3D graphics, we design and visualise your future bathroom based on room measurements and selected bathroom equipment."
+        }
+      }
+    },
     "news": {
       "eyebrow": "Latest updates",
       "heading": "News & Insights",
@@ -261,6 +280,23 @@
   },
   "common": {
     "returnHome": "Return to Home",
-    "notFound": "Oops! Page not found"
+    "notFound": "Oops! Page not found",
+    "error404": "Error 404",
+    "notFoundDescription": "The page you are looking for might have moved, been removed, or never existed.",
+    "notFoundContentDescription": "We could not find this content. It may have been removed, unpublished, or the link may be outdated.",
+    "sectionImage": "Section image",
+    "toggleMenu": "Toggle menu",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "more": "More",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "toggleSidebar": "Toggle sidebar",
+    "breadcrumb": "Breadcrumb",
+    "pagination": "Pagination",
+    "goToPreviousPage": "Go to previous page",
+    "goToNextPage": "Go to next page",
+    "morePages": "More pages"
   }
 }

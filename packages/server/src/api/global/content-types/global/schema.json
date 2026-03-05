@@ -14,22 +14,30 @@
   "attributes": {
     "siteName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "displayName": "Site name",
+      "description": "Website name shown in branding and titles"
     },
     "favicon": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": ["images", "files", "videos"],
+      "displayName": "Favicon",
+      "description": "Browser tab and bookmark icon"
     },
     "siteDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "displayName": "Site description",
+      "description": "Short site description for SEO and metadata"
     },
     "defaultSeo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "displayName": "Default SEO",
+      "description": "Default meta and share settings for the site"
     }
   }
 }

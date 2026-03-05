@@ -7,6 +7,7 @@ import FeaturedProjects from "../components/home/FeaturedProjects";
 import Footer from "../components/home/Footer";
 import Header from "../components/home/Header";
 import HeroSection from "../components/home/HeroSection";
+import HighlightsSection from "../components/home/HighlightsSection";
 import NewsSection from "../components/home/NewsSection";
 import ProductCategories from "../components/home/ProductCategories";
 import Testimonials from "../components/home/Testimonials";
@@ -23,8 +24,9 @@ function IndexPage() {
       <HeroSection />
       <CompanyLogos />
       <AboutSection />
-      <ProductCategories />
       <WhyChooseUs />
+      <ProductCategories />
+      <HighlightsSection />
       <FeaturedProjects />
       <Testimonials />
       <NewsSection />

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const logoNames = [
@@ -32,17 +32,13 @@ const CompanyLogos = () => {
   }, [emblaApi]);
 
   return (
-    <section id="partners" className="bg-muted/30 py-16 md:py-20">
+    <section id="partners" className="bg-muted/30 py-8 md:py-12">
       <div className="container mx-auto px-6">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-muted-foreground font-body">
+        <div className="mx-auto mb-6 max-w-2xl text-center">
+          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground font-body">
             {t("home.logos.eyebrow")}
           </p>
-          <h2 className="font-display text-2xl text-foreground md:text-3xl">
-            {t("home.logos.heading")}
-          </h2>
         </div>
-
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex touch-pan-y">
             {[...logoNames, ...logoNames].map((name, index) => (

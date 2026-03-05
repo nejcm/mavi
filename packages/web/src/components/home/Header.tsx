@@ -1,4 +1,5 @@
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { IMAGES_BASE_PATH } from "@/constants/config";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -44,7 +45,7 @@ const Header = ({ isDark }: HeaderProps) => {
         }`}
       >
         <a href="/" className="flex items-center gap-3">
-          <img src="/images/mavi_logo.png" alt="Mavi d.o.o." className="h-8 w-auto" />
+          <img src={`${IMAGES_BASE_PATH}/mavi_logo.png`} alt="Mavi d.o.o." className="h-8 w-auto" />
           <span className="sr-only">Mavi d.o.o.</span>
         </a>
 
@@ -54,7 +55,7 @@ const Header = ({ isDark }: HeaderProps) => {
               <Link
                 key={link.key}
                 to={link.to as any}
-                className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
+                className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
               </Link>
@@ -62,7 +63,7 @@ const Header = ({ isDark }: HeaderProps) => {
               <a
                 key={link.key}
                 href={link.href}
-                className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
+                className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} transition-background duration-300`}
               >
                 {t(`nav.${link.key}`)}
               </a>
@@ -77,7 +78,7 @@ const Header = ({ isDark }: HeaderProps) => {
         <button
           className="md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label={t("common.toggleMenu")}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -96,7 +97,7 @@ const Header = ({ isDark }: HeaderProps) => {
                   key={link.key}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
+                  className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
                 >
                   {t(`nav.${link.key}`)}
                 </Link>
@@ -105,7 +106,7 @@ const Header = ({ isDark }: HeaderProps) => {
                   key={link.key}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase ${scrolled && !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
+                  className={`text-sm tracking-wider uppercase ${scrolled || !isDark ? "hover:text-black" : "hover:text-gray-200"} py-2`}
                 >
                   {t(`nav.${link.key}`)}
                 </a>

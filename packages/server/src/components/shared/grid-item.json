@@ -1,0 +1,59 @@
+{
+  "collectionName": "shared_grid_item",
+  "info": {
+    "displayName": "Grid Item",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "displayName": "Heading",
+      "description": "Item heading"
+    },
+    "tagline": {
+      "type": "string",
+      "displayName": "Tagline",
+      "description": "Short subtitle or tagline"
+    },
+    "content": {
+      "type": "richtext",
+      "displayName": "Content",
+      "description": "Rich text body"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "displayName": "Image",
+      "description": "Item image"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.video",
+      "displayName": "Video",
+      "description": "Video component"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.icon",
+      "displayName": "Icon",
+      "description": "Icon component"
+    },
+    "mediaPosition": {
+      "type": "enumeration",
+      "enum": ["top", "right", "bottom", "left"],
+      "displayName": "Media position",
+      "description": "Where media appears relative to content"
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": ["left", "right", "center"],
+      "displayName": "Alignment",
+      "description": "Text and content alignment"
+    }
+  }
+}

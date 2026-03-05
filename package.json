@@ -17,9 +17,11 @@
     "knip": "knip",
     "lint": "oxlint --deny-warnings .",
     "lint:ts": "bun run --filter '*' lint:ts",
-    "format": "bun run --filter '*' format",
+    "lint:all": "bun run lint && bun run lint:ts",
+    "format": "oxfmt .",
     "format:check": "oxfmt --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "husky": "~9.1.7",

@@ -1,0 +1,23 @@
+{
+  "collectionName": "section_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "displayName": "Name",
+      "description": "Block label for internal use"
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.slide",
+      "max": 6,
+      "displayName": "Slides",
+      "description": "Hero slides (max 6)"
+    }
+  }
+}
