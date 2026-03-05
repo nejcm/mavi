@@ -1,4 +1,4 @@
-# Mavi
+# Mavi monorepo
 
 Monorepo for the Mavi web app and API.
 
@@ -52,8 +52,6 @@ bun run test:e2e    # E2E tests (Playwright) in packages/web; run `npx playwrigh
 - **i18n:** i18next, react-i18next
 - **Analytics:** posthog-js, web-vitals
 - **Testing:** Vitest, @playwright/test
-
-
 
 # Flags
 
