@@ -1,6 +1,6 @@
 # Mavi monorepo
 
-Monorepo for the Mavi web app and server (admin and api).
+Monorepo for the Mavi web app and server (admin and API).
 
 ## Packages
 
