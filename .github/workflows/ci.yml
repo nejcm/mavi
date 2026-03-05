@@ -135,6 +135,7 @@ jobs:
         run: bun run build:web
         env:
           VITE_BASE_PATH: /${{ github.event.repository.name }}
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
