@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "lint": "oxlint --deny-warnings .",
     "lint:ts": "tsc --noEmit -p tsconfig.app.json",
-    "format": "oxfmt .",
-    "format:check": "oxfmt --check .",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "test": "vitest run",
