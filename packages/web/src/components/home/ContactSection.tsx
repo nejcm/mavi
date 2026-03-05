@@ -13,6 +13,7 @@ import {
   APILoadingStatus,
   APIProvider,
   Map,
+  MapProps,
   Marker,
   useApiLoadingStatus,
 } from "@vis.gl/react-google-maps";
@@ -52,29 +53,25 @@ function useInViewOnce(rootMargin = "200px") {
   return { ref, visible };
 }
 
+type OfficeMapContentProps = MapProps & {
+  selectedOffice: OfficeLocation | null;
+  onMarkerClick: (office: OfficeLocation) => void;
+  mapInteractive: boolean;
+};
+
 function OfficeMapContent({
   selectedOffice,
   onMarkerClick,
   mapInteractive,
-  onDblClick,
-  mapHint,
-  mapUnavailable,
-  mapLoading,
-}: {
-  selectedOffice: OfficeLocation | null;
-  onMarkerClick: (office: OfficeLocation) => void;
-  mapInteractive: boolean;
-  onDblClick: () => void;
-  mapHint: string;
-  mapUnavailable: string;
-  mapLoading: string;
-}) {
+  ...props
+}: OfficeMapContentProps) {
   const status = useApiLoadingStatus();
+  const { t } = useTranslation();
 
   if (status === APILoadingStatus.FAILED) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm">
-        {mapUnavailable}
+        {t("contact.mapUnavailable")}
       </div>
     );
   }
@@ -82,7 +79,7 @@ function OfficeMapContent({
   if (status !== APILoadingStatus.LOADED) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground font-body text-sm animate-pulse">
-        {mapLoading}
+        {t("contact.mapLoading")}
       </div>
     );
   }
@@ -95,9 +92,10 @@ function OfficeMapContent({
   return (
     <>
       <Map
-        center={center}
-        zoom={zoom}
-        onDblclick={onDblClick}
+        center={mapInteractive ? undefined : center}
+        zoom={mapInteractive ? undefined : zoom}
+        defaultCenter={center}
+        defaultZoom={zoom}
         disableDoubleClickZoom
         draggable={mapInteractive}
         scrollwheel={mapInteractive}
@@ -106,6 +104,7 @@ function OfficeMapContent({
         fullscreenControl={false}
         mapTypeControl={false}
         style={{ width: "100%", height: "100%" }}
+        {...props}
       >
         {OFFICE_LOCATIONS.map((office) => (
           <Marker
@@ -119,7 +118,7 @@ function OfficeMapContent({
         ))}
       </Map>
       <div className="absolute bottom-3 left-3 bg-background/90 backdrop-blur-sm text-xs text-muted-foreground px-3 py-1.5 rounded-md pointer-events-none">
-        {mapHint}
+        {t("contact.mapHint")}
       </div>
     </>
   );
@@ -139,6 +138,7 @@ const ContactSection = () => {
 
   const handleSelectOffice = useCallback((office: OfficeLocation) => {
     setSelectedOffice(office);
+    setMapInteractive(false);
     const el = listRef.current?.querySelector(`[data-office="${office.id}"]`);
     el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, []);
@@ -149,7 +149,7 @@ const ContactSection = () => {
     el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, []);
 
-  const handleMapDblClick = useCallback(() => {
+  const onMapClick = useCallback(() => {
     setMapInteractive((prev) => !prev);
   }, []);
 
@@ -237,10 +237,7 @@ const ContactSection = () => {
                     selectedOffice={selectedOffice}
                     onMarkerClick={handleMarkerClick}
                     mapInteractive={mapInteractive}
-                    onDblClick={handleMapDblClick}
-                    mapHint={t("contact.mapHint")}
-                    mapUnavailable={t("contact.mapUnavailable")}
-                    mapLoading={t("contact.mapLoading")}
+                    onClick={onMapClick}
                   />
                 </APIProvider>
               ) : !hasApiKey ? (
