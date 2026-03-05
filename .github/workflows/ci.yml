@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Oxlint
+      - name: Lint
         run: bun run lint
 
       - name: Format check
