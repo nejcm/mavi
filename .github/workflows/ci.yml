@@ -134,7 +134,7 @@ jobs:
       - name: Build web app
         run: bun run build:web
         env:
-          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
+          BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3

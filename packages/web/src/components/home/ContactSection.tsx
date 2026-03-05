@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { IMAGES_BASE_PATH } from "@/constants/config";
 import { OFFICE_LOCATIONS, type OfficeLocation } from "@/data/offices";
 import { cn } from "@/lib/utils";
 import {
@@ -27,7 +28,7 @@ const DEFAULT_ZOOM = 8;
 const SELECTED_ZOOM = 14;
 
 /** Custom marker image matching mavi.si/info */
-const MARKER_ICON = "/images/marker.png";
+const MARKER_ICON = `${IMAGES_BASE_PATH}/marker.png`;
 
 function useInViewOnce(rootMargin = "200px") {
   const ref = useRef<HTMLElement | null>(null);

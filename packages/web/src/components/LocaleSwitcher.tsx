@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { IMAGES_BASE_PATH } from "@/constants/config";
 import { type Locale } from "@/i18n";
 import { useAppStore } from "@/stores/app-store";
 
@@ -20,17 +21,17 @@ const locales: { value: Locale; labelKey: string; flagSrc: string }[] = [
   {
     value: "en",
     labelKey: "locale.languageEnglish",
-    flagSrc: "/images/flags/gb.svg",
+    flagSrc: `${IMAGES_BASE_PATH}/flags/gb.svg`,
   },
   {
     value: "sl",
     labelKey: "locale.languageSlovenian",
-    flagSrc: "/images/flags/si.svg",
+    flagSrc: `${IMAGES_BASE_PATH}/flags/si.svg`,
   },
   {
     value: "hr",
     labelKey: "locale.languageCroatian",
-    flagSrc: "/images/flags/hr.svg",
+    flagSrc: `${IMAGES_BASE_PATH}/flags/hr.svg`,
   },
 ];
 

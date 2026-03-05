@@ -23,7 +23,7 @@ export default defineConfig(async ({ command }) => {
   }
 
   return {
-    base: process.env.GITHUB_PAGES_BASE ?? "/",
+    base: process.env.BASE_PATH ?? "/",
     plugins,
     server: {
       host: "::",

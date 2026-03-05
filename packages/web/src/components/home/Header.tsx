@@ -1,4 +1,5 @@
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { IMAGES_BASE_PATH } from "@/constants/config";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -44,7 +45,7 @@ const Header = ({ isDark }: HeaderProps) => {
         }`}
       >
         <a href="/" className="flex items-center gap-3">
-          <img src="/images/mavi_logo.png" alt="Mavi d.o.o." className="h-8 w-auto" />
+          <img src={`${IMAGES_BASE_PATH}/mavi_logo.png`} alt="Mavi d.o.o." className="h-8 w-auto" />
           <span className="sr-only">Mavi d.o.o.</span>
         </a>
 
