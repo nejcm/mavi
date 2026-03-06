@@ -23,7 +23,7 @@ export default defineConfig(async ({ command }) => {
   }
 
   return {
-    base: process.env.BASE_PATH ?? "/",
+    base: process.env.VITE_BASE_PATH ?? "/",
     plugins,
     server: {
       host: "::",
